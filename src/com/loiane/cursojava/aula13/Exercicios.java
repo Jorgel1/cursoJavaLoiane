@@ -46,6 +46,12 @@ public class Exercicios {
         double areaCiculo = 3.14 * (raio * raio);
         System.out.println("A área do círculo é: " + areaCiculo);
 
+              //6 versão da professora
+        //scanner scan = new Scanner(System.in);
+        System.out.println("Entre com o raio do círculo:");
+        double raio = scan.nextDouble();
+        double area = Math.PI * Math.pow(raio, 2);
+        System.out.println("A área do círculo é: " + area);
 
 
         //7 Forneça a medida de um lado para calcular a área.
@@ -54,6 +60,15 @@ public class Exercicios {
         double dobroAreaQuadrado = 2 * (lado * lado);
         System.out.println("O dobro da área do quadrado é: " + dobroAreaQuadrado + " metros");
 
+        //versao da professora
+         System.out.println("Entre com o tamanho do lado do quadrado: ");
+        double lado = scan.nextDouble();
+
+        //area = lado * lado
+        double area = Math.pow(lado, 2);
+
+        System.out.println("A área do quadrado é: " + area);
+        System.out.println("O dobro da área do quadrado é: " + (area * 2));
 
         //8 Calcular o sálario do mês
         System.out.println("Qual o valor da hora e quantas horas trabalhadas em um mês: ");
@@ -77,7 +92,7 @@ public class Exercicios {
         double tempFarenheit = (tempCelsius * 1.8) + 32;
         System.out.println(tempCelsius + " Graus Celsius é " + tempFarenheit + " Farenheit");
 
-        //11 Informe dois números inteiros e um real:
+   //11 Informe dois números inteiros e um real:
         //O produto do dobro do primeiro com metade do segundo
         //a soma do triplo do primeiro com o terceiro
         //O terceiro elevado ao cubo.
@@ -89,6 +104,8 @@ public class Exercicios {
         double resultadoA = (numero1 * 2) * (numero2 / 2);
         double resultadoB = (numero1 * 3) + numero3;
         double resultadoC = (numero3 * numero3 * numero3);
+        //ou
+        //double resultadoC = Math.pow(numero3, 3);
         System.out.println("O produto do dobro do primeiro[" + numero1 +
                 "] com metade do segundo [" + numero2 + "] = " + resultadoA);
         System.out.println("A soma do triplo do primeiro [" + numero1 +
@@ -101,7 +118,6 @@ public class Exercicios {
         double resultadoPesoIdeal = (72.7 * altura) -58;
         System.out.println("Resultado do peso ideal é: " + resultadoPesoIdeal);
 
-         */
 
         //13 Calcular a multa de 4,00 reais por kilo que exceder 50 kilos.
         System.out.println("Informe o peso total dos peixes: ");
@@ -116,6 +132,33 @@ public class Exercicios {
                 " kilos, excesso= " + excesso + " kilo(s), multa a ser paga= " + multa + " reais");
 
 
+        //13 Calcular o sálario do mês e o desconto com o imposto de renda
+        System.out.println("Qual o valor da hora e quantas horas trabalhadas em um mês: ");
+        double valorHora = scan.nextDouble();
+        int qtdHoraMes = scan.nextInt();
+        double salarioBruto = valorHora * qtdHoraMes;
+        double descontoInss = salarioBruto * 0.08;
+        double descontoSindical = salarioBruto * 0.05;
+        double descontoIR = salarioBruto * 0.11;
+        double salarioLiquido = salarioBruto - (descontoInss + descontoSindical + descontoIR);
+        System.out.println("+ Salário Bruto : R$ " + salarioBruto +
+                "\n- IR (11%) : " + descontoIR +
+                "\n- INSS (8%) : " + descontoInss +
+                "\n- Sindicato (5%) : " + descontoSindical +
+                "\n= Salário Líquido : " + salarioLiquido);
+
+         //14 Forneça o tamanho do arquivo em MB e a velocidade em Mbps para calcular o
+        // tempo gasto em download
+        System.out.println("Forneça o tanho do arquivo em MB: ");
+        double tamanhoMB = scan.nextDouble();
+        System.out.println("Forneça a velocidade da internet: ");
+        double velocidadeMbps = scan.nextDouble();
+        double tempoGasto = tamanhoMB / velocidadeMbps;
+        System.out.println("Tamamnho do arquivo: " + tamanhoMB + " Mb");
+        System.out.println("Velocidade do link: " + velocidadeMbps + " Mbps");
+        System.out.println("Tempo gasto: " + tempoGasto + " segundos");
+
+         */
 
     }
 }
