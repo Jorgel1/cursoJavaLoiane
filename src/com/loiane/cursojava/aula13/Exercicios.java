@@ -116,12 +116,6 @@ public class Exercicios {
                 " kilos, excesso= " + excesso + " kilo(s), multa a ser paga= " + multa + " reais");
 
 
-                //sssssss
-
-        //sssssss
-
-        //asaassa
-        //4444444
 
     }
 }
