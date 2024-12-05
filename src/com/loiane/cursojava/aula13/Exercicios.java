@@ -115,5 +115,8 @@ public class Exercicios {
         System.out.println("Total do peso do peixe= " + pesoPeixe +
                 " kilos, excesso= " + excesso + " kilo(s), multa a ser paga= " + multa + " reais");
 
+
+                //sssssss
+
     }
 }
