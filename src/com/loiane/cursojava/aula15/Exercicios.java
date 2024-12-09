@@ -294,10 +294,229 @@ public class Exercicios {
         System.out.println("Entre 4.0 e zero                 E");
         System.out.println("Média: " + media + " Reprovado"); 
     }
-*/
 
-//15
 
-    }
+        //15Triangulo Equilátero, Isósceles, Escaleno.
+        System.out.println("Forneça a medida do primeiro lado");
+        double lado1 = scan.nextDouble();
+        System.out.println("Forneça a medida do segundo lado");
+        double lado2 = scan.nextDouble();
+        System.out.println("Forneça a medida do terceiro lado");
+        double lado3 = scan.nextDouble();
+        
+        if (lado1 == lado2 && lado1 == lado3){
+            System.out.println("È um triângulo Equilátero.");
+        } else if(lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+            System.out.println("È um triângulo Isósceles.");
+        } else {
+            System.out.println("È um triângulo Escaleno.");
+        }
+            
+
+        //16Equação
+        System.out.println("Forneça o valor de A");
+        double a = scan.nextDouble();
+        if (a == 0) {
+            System.out.println("A equação não é do segundo grau. O programa foi encerrado.");
+        }    
+        System.out.println("Forneça o valor de B");
+        double b = scan.nextDouble();
+        System.out.println("Forneça o valor de C");
+        double c = scan.nextDouble();
+        double x;
+        double delta = (a * (x * x)) + (b * x) + c;
+        if (delta < 0) {
+            System.out.println("A equação não possui raízes reais. O programa foi encerrado.");
+        }
+        //faltou dados para terminar o exercicio
+        
+          
+        
+        //17 Informe o ano para calcular se é bissexto.
+          System.out.println("Informe o ano para calcular se é bissexto.");
+          int ano = scan.nextInt();
+          if ((ano % 4) == 0) {
+            System.out.println("É bissexto.");
+          } else {
+            System.out.println("Não é um ano bissexto.");
+          }
+            
+
+         //18 par ou ímpar
+         System.out.println("Forneça um número para verficar se é par ou ímpar:");   
+         int parOuImpar = scan.nextInt();
+
+         if(parOuImpar % 2 == 0) {
+            System.out.println("É par.");
+         } else {
+            System.out.println("É ímpar.");
+         }
+
+         
+        //19Fazer uma operação e informar se é par ou ímpar e negativo ou não.
+        System.out.println("Informe o primeiro valor.");
+        double primeiroValor = scan.nextDouble();
+        System.out.println("Informe o segundo valor.");
+        double segundoValor = scan.nextDouble();
+        System.out.println("Escolha uma operação:\n 1 - Dividir\n" + 
+        " 2 - Multiplicar\n 3 - Somar\n 4 - Diminuir ");
+        int operacao = scan.nextInt();
+        double divisao = primeiroValor / segundoValor;;
+        double multiplicacao;
+        double adicao;
+        double subtracao;
+        String expressaoA;
+        String expressaoB;
+        String par = " É par.";
+        String impar = " É ímpar.";
+        String positivo = " É positivo.";
+        String negativo = " É nagativo.";
+
+        switch (operacao) {
+            case 1:
+                if (primeiroValor != 0) {
+                    expressaoA = (divisao % 2) == 0 ? par : impar;
+                    expressaoB = divisao < 0 ? negativo : positivo;
+                    System.out.println(divisao + expressaoA + expressaoB);
+                } else {
+                    System.out.println("O dividendo não pode ser zero.");
+                }
+                break;
+            case 2:
+                multiplicacao = primeiroValor * segundoValor;
+                expressaoA = multiplicacao % 2 == 0 ? par : impar;
+                expressaoB = multiplicacao < 0 ? negativo : positivo;
+                System.out.println(multiplicacao + expressaoA + expressaoB);
+                break;
+            case 3:
+                adicao = primeiroValor + segundoValor;
+                expressaoA = adicao % 2 == 0 ? par : impar;
+                expressaoB = adicao < 0 ? negativo : positivo;
+                System.out.println(adicao + expressaoA + expressaoB);
+                break;
+            case 4:
+                subtracao = primeiroValor - segundoValor;
+                expressaoA = subtracao % 2 == 0 ? par : impar;
+                expressaoB = subtracao < 0 ? negativo : positivo;
+                System.out.println(subtracao + expressaoA + expressaoB);
+                break;
+
+            default:
+                System.out.println("Operação inválida.");
+                break;
+        }
+                
+
+                //20 Pergunta sobre um crime.
+
+                int sim = 0;
+                int nao = 0;
+                int opcao;
+                System.out.println("Telefonou para a vítima?\n" + //
+                        "1- Sim\n" + //
+                        "0 - Não");
+                opcao = scan.nextInt();
+                if (opcao == 1) {
+                    sim++;
+                }
+
+                System.out.println("Esteve no local do crime?\n" + //
+                        "1- Sim\n" + //
+                        "0 - Não ");
+                opcao = scan.nextInt();
+                if (opcao == 1) {
+                    sim++;
+                }
+                System.out.println("Mora perto da vítima? \n" + //
+                        "1- Sim\n" + //
+                        "0 - Não");
+                opcao = scan.nextInt();
+                if (opcao == 1) {
+                    sim++;
+                }
+                System.out.println("Devia para a vítima? \n" + //
+                        "1- Sim\n" + //
+                        "0 - Não");
+                opcao = scan.nextInt();
+                if (opcao == 1) {
+                    sim++;
+                }
+                System.out.println("Já trabalhou com a vítima? \n" + //
+                        "1- Sim\n" + //
+                        "0 - Não");
+                opcao = scan.nextInt();
+                if (opcao == 1) {
+                    sim++;
+                }
+                switch (sim) {
+                    case 2:
+                        System.out.println("Suspeita");
+                        break;
+                    case 3:
+                    case 4:
+                        System.out.println("Cúmplice");
+                        break;
+                    case 5:
+                        System.out.println("Assassino");
+                        break;
+
+                    default:
+                        System.out.println("Inocente");
+                        break;
+                }
+                        */
+
+// 21alcool, gasolina e desconto
+System.out.println("Escolha o combustível: ");
+System.out.println("A - Álcool");
+System.out.println("G - Gasolina");
+String opcao = scan.nextLine();
+System.out.println("Informe a quantidade de litros: ");
+int qtdLitro = scan.nextInt();
+int desconto;
+double valorCombustivel;
+
+switch (opcao) {
+    case "A":
+        if (qtdLitro <= 20) {
+            desconto = 3;
+            System.out.println("Desconto: " + desconto);
+            valorCombustivel = (qtdLitro * 1.90);
+            System.out.println("Valor bruto do combustível: " + valorCombustivel);
+            valorCombustivel -= (valorCombustivel / 100) * desconto;
+            System.out.println("Valor do combustível com desconto: " + valorCombustivel);
+        } else {
+            desconto = 5;
+            System.out.println("Desconto: " + desconto);
+            valorCombustivel = (qtdLitro * 1.90);
+            System.out.println("Valor bruto do combustível: " + valorCombustivel);
+            valorCombustivel = valorCombustivel - ((valorCombustivel / 100) * desconto);
+            System.out.println("Valor do combustível com desconto: " + valorCombustivel);
+        }
+        break;
+    case "G":
+        if (qtdLitro <= 20) {
+            desconto = 4;
+            System.out.println("Desconto: " + desconto);
+            valorCombustivel = (qtdLitro * 2.50);
+            System.out.println("Valor bruto do combustível: " + valorCombustivel);
+            valorCombustivel = valorCombustivel - ((valorCombustivel / 100) * desconto);
+            System.out.println("Valor do combustível com desconto: " + valorCombustivel);
+        } else if (qtdLitro > 20) {
+            desconto = 6;
+            System.out.println("Desconto: " + desconto);
+            valorCombustivel = (qtdLitro * 2.50);
+            System.out.println("Valor bruto do combustível: " + valorCombustivel);
+            valorCombustivel = valorCombustivel - ((valorCombustivel / 100) * desconto);
+            System.out.println("Valor do combustível com desconto: " + valorCombustivel);
+        }
+        break;
+
+    default:
+        System.out.println("Opção inválida.");
+}
+
+
+    }  
     
 }
