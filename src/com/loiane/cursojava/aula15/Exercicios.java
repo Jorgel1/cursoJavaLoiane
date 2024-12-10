@@ -464,7 +464,7 @@ public class Exercicios {
                         System.out.println("Inocente");
                         break;
                 }
-                        */
+
 
 // 21alcool, gasolina e desconto
 System.out.println("Escolha o combustível: ");
@@ -516,6 +516,137 @@ switch (opcao) {
         System.out.println("Opção inválida.");
 }
 
+
+
+
+        //22Desconto por determinado valor ou peso
+        System.out.println("Informe quantos kilos de morango:");
+        double morangoKilo = scan.nextDouble();
+        double morangoValor = 2.50;
+        System.out.println("Informe quantos kilos de maça:");
+        double macaKilo = scan.nextDouble();
+        double macaValor = 1.80;
+        double valorTotalMorango = 0;
+        double valorTotalMaca = 0;
+        double valorTotalCompra;
+
+        if (morangoKilo <= 5){
+           valorTotalMorango=  morangoKilo * morangoValor;
+        } else {
+            morangoValor = 2.20;
+            valorTotalMorango=  morangoKilo * morangoValor;
+        }
+
+        if (macaKilo <= 5){
+            valorTotalMaca=  macaKilo * macaValor;
+        } else {
+            macaValor = 1.50;
+            valorTotalMaca=  macaKilo * macaValor;
+        }
+
+        System.out.println("Peso do morango(kg): " + morangoKilo);
+        System.out.println("Valor total do morango(R$): " + valorTotalMorango);
+        System.out.println("Peso da maça(kg): " + macaKilo);
+        System.out.println("Valor total da maça(R$): " + valorTotalMaca);
+        System.out.println("Valor total sem o desconto de 10%: " + (valorTotalMorango + valorTotalMaca));
+
+        if (((morangoKilo + macaKilo) > 8) || ((valorTotalMorango + valorTotalMaca) > 25)){
+            valorTotalCompra = valorTotalMorango + valorTotalMaca;
+            valorTotalCompra -= valorTotalCompra/100 * 10;
+            System.out.println("Valor total com o desconto de 10%: " + valorTotalCompra);
+        }
+
+
+
+        //23promoção de carne
+
+        double fileDuploKilo;
+        double fileDuploValor = 4.90;
+
+        double alcatraKilo;
+        double alcatraValor = 5.90;
+
+        double picanhaKilo;
+        double picanhaValor = 6.90;
+        double valorTotalFileDuplo = 0;
+        double valorTotalAlcatra = 0;
+        double valorTotalPicanha = 0;
+        double valorTotalCompra = 0;
+
+        System.out.println("Escolha a carne: ");
+        System.out.println("1 - File Duplo");
+        System.out.println("2 - Alcatra");
+        System.out.println("3 - Picanha");
+        int opcao = scan.nextInt();
+        System.out.println("Forma de pagamento com o cartão Tabajara? 's' ou 'n' ");
+        String formaPagamento = scan.next();
+
+        switch (opcao){
+            case 1: System.out.println("Informe quantos kilos de File Duplo:");
+                fileDuploKilo = scan.nextDouble();
+                if (fileDuploKilo > 5){
+                        fileDuploValor = 5.80;
+                        valorTotalFileDuplo = fileDuploKilo * fileDuploValor;
+
+            } else {
+                valorTotalFileDuplo = fileDuploKilo * fileDuploValor;
+            }
+            if (formaPagamento.equalsIgnoreCase("s")){
+                System.out.println("Forma de pagamento: Cartão Tabajara\nCom desconto");
+                System.out.println("Desconto: " + (valorTotalFileDuplo / 100 * 5));
+                valorTotalFileDuplo -= valorTotalFileDuplo / 100 * 5;
+            } else {
+                System.out.println("Forma de pagamento: Outro\nSem desconto");
+            }
+                System.out.println("File Duplo: " + fileDuploKilo + "kg - Preço por kilo: " + fileDuploValor +
+                        " Preço Total: " + valorTotalFileDuplo);
+            break;
+
+            case 2: System.out.println("Informe quantos kilos de alcatra:");
+                alcatraKilo = scan.nextDouble();
+                if (alcatraKilo > 5){
+                alcatraValor = 6.80;
+                valorTotalAlcatra = alcatraKilo * alcatraValor;
+
+            } else {
+                valorTotalAlcatra = alcatraKilo * alcatraValor;
+            }
+                if (formaPagamento.equalsIgnoreCase("s")){
+                    System.out.println("Forma de pagamento: Cartão Tabajara\nCom desconto");
+                    System.out.println("Desconto: " + (valorTotalAlcatra / 100 * 5));
+                    valorTotalAlcatra -= valorTotalAlcatra / 100 * 5;
+                } else {
+                    System.out.println("Forma de pagamento: Outro\nSem desconto");
+                }
+                System.out.println("Alcatra: " + alcatraKilo + "kg - Preço por kilo: " + alcatraValor +
+                        " Preço Total: " + valorTotalAlcatra);
+                break;
+
+            case 3: System.out.println("Informe quantos kilos de Picanha:");
+                picanhaKilo = scan.nextDouble();
+                if (picanhaKilo > 5){
+                picanhaValor = 6.80;
+                valorTotalPicanha = picanhaKilo * picanhaValor;
+
+            } else {
+                valorTotalPicanha = picanhaKilo * picanhaValor;
+            }
+                if (formaPagamento.equalsIgnoreCase("s")){
+                    System.out.println("Forma de pagamento: Cartão Tabajara\nCom desconto");
+                    System.out.println("Desconto: " + (valorTotalPicanha / 100 * 5));
+                    valorTotalPicanha -= valorTotalPicanha / 100 * 5;
+                } else {
+                    System.out.println("Forma de pagamento: Outro\nSem desconto");
+                }
+                System.out.println("Picanha: " + picanhaKilo + "kg - Preço por kilo: " + picanhaValor +
+                        " Preço Total: " + valorTotalPicanha);
+                break;
+            default:
+                System.out.println("Opção inválida. ");
+
+        }
+
+ */
 
     }  
     
