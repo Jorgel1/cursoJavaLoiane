@@ -681,33 +681,7 @@ switch (opcao) {
         }
 
  */
-        //16Equação
-        System.out.println("Forneça o valor de A");
-        double a = scan.nextDouble();
-        if (a == 0) {
-            System.out.println("A equação não é do segundo grau. O programa foi encerrado.");
-        } else {
-        System.out.println("Forneça o valor de B");
-        double b = scan.nextDouble();
-        System.out.println("Forneça o valor de C");
-        double c = scan.nextDouble();
-
-        double delta = (b*b) - (4*a*c);
-        
-        if (delta < 0) {
-            System.out.println("Delta negativo. A equação não possui raízes reais. O programa foi encerrado.");  
-        } else {
-            System.out.println("Delta: " + delta);
-
-            double x1 =  ((-b ) + Math.sqrt (delta)) / (2*a);
-            double x2 =  ((-b ) - Math.sqrt (delta)) / (2*a);
-
-            System.out.println("x1 = " + x1);
-            System.out.println("x2 = " + x2);
-        }
-    }
-        
-
-        
+  
+ 
     }
 }
