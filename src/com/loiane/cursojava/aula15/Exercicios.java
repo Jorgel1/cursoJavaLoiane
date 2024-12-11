@@ -180,6 +180,30 @@ public class Exercicios {
                 }
                 System.out.println("Ordem decrescente: " + valorMaior + " " + valorMedio + " " + valorMenor);    
             }
+
+            //versão da professora
+        System.out.println("Entre com primeiro número:");
+        int num1 = scan.nextInt();
+
+        System.out.println("Entre com segundo número:");
+        int num2 = scan.nextInt();
+
+        System.out.println("Entre com terceiro número:");
+        int num3 = scan.nextInt();
+
+        if(num1 <= num2 && num1 <= num3 && num2 <= num3){
+            System.out.println(num3 + " - " + num2 + " - " + num1);
+        } else if(num1 <= num2 && num1 <= num3 && num3 <= num2){
+            System.out.println(num2 + " - " + num3 + " - " + num1);
+            } else if(num2 <= num1 && num2 <= num3 && num1 <= num3){
+                    System.out.println(num3 + " - " + num1 + " - " + num2);    
+        } else if(num2 <= num1 && num2 <= num3 && num3 <= num1){
+                    System.out.println(num1 + " - " + num3 + " - " + num2);  
+        } else if(num3 <= num1 && num3 <= num2 && num2 <= num1){
+                    System.out.println(num1 + " - " + num2 + " - " + num3);  
+        } else if(num3 <= num1 && num3 <= num2 && num1 <= num2){
+                    System.out.println(num2 + " - " + num1 + " - " + num3);  
+        }
                 
 
                 //10 conforme a letra do turno será uma mensagem de complimento.
@@ -188,8 +212,11 @@ public class Exercicios {
                 String turno = scan.next();
 
                 switch (turno) {
+                    case "m":
                     case "M": System.out.println("Bom dia"); break;
+                    case "v":
                     case "V": System.out.println("Boa tarde"); break;
+                    case "n":
                     case "N": System.out.println("Boa noite"); break;                
                     default: System.out.println("Valor inválido!");                       
                 }
@@ -318,20 +345,27 @@ public class Exercicios {
         double a = scan.nextDouble();
         if (a == 0) {
             System.out.println("A equação não é do segundo grau. O programa foi encerrado.");
-        }    
+        } else {
         System.out.println("Forneça o valor de B");
         double b = scan.nextDouble();
         System.out.println("Forneça o valor de C");
         double c = scan.nextDouble();
-        double x;
-        double delta = (a * (x * x)) + (b * x) + c;
+
+        double delta = (b*b) - (4*a*c);
+        
         if (delta < 0) {
-            System.out.println("A equação não possui raízes reais. O programa foi encerrado.");
+            System.out.println("Delta negativo. A equação não possui raízes reais. O programa foi encerrado.");  
+        } else {
+            System.out.println("Delta: " + delta);
+            
+            double x1 =  ((-b ) + Math.sqrt (delta)) / (2*a);
+            double x2 =  ((-b ) - Math.sqrt (delta)) / (2*a);
+
+            System.out.println("x1 = " + x1);
+            System.out.println("x2 = " + x2);
         }
-        //faltou dados para terminar o exercicio
-        
-          
-        
+    }
+              
         //17 Informe o ano para calcular se é bissexto.
           System.out.println("Informe o ano para calcular se é bissexto.");
           int ano = scan.nextInt();
@@ -647,30 +681,33 @@ switch (opcao) {
         }
 
  */
+        //16Equação
+        System.out.println("Forneça o valor de A");
+        double a = scan.nextDouble();
+        if (a == 0) {
+            System.out.println("A equação não é do segundo grau. O programa foi encerrado.");
+        } else {
+        System.out.println("Forneça o valor de B");
+        double b = scan.nextDouble();
+        System.out.println("Forneça o valor de C");
+        double c = scan.nextDouble();
 
-//versão da professora
-        System.out.println("Entre com primeiro número:");
-        int num1 = scan.nextInt();
+        double delta = (b*b) - (4*a*c);
+        
+        if (delta < 0) {
+            System.out.println("Delta negativo. A equação não possui raízes reais. O programa foi encerrado.");  
+        } else {
+            System.out.println("Delta: " + delta);
 
-        System.out.println("Entre com segundo número:");
-        int num2 = scan.nextInt();
+            double x1 =  ((-b ) + Math.sqrt (delta)) / (2*a);
+            double x2 =  ((-b ) - Math.sqrt (delta)) / (2*a);
 
-        System.out.println("Entre com terceiro número:");
-        int num3 = scan.nextInt();
-
-        if(num1 <= num2 && num1 <= num3 && num2 <= num3){
-            System.out.println(num3 + " - " + num2 + " - " + num1);
-        } else if(num1 <= num2 && num1 <= num3 && num3 <= num2){
-            System.out.println(num2 + " - " + num3 + " - " + num1);
-            } else if(num2 <= num1 && num2 <= num3 && num1 <= num3){
-                    System.out.println(num3 + " - " + num1 + " - " + num2);    
-        } else if(num2 <= num1 && num2 <= num3 && num3 <= num1){
-                    System.out.println(num1 + " - " + num3 + " - " + num2);  
-        } else if(num3 <= num1 && num3 <= num2 && num2 <= num1){
-                    System.out.println(num1 + " - " + num2 + " - " + num3);  
-        } else if(num3 <= num1 && num3 <= num2 && num1 <= num2){
-                    System.out.println(num2 + " - " + num1 + " - " + num3);  
+            System.out.println("x1 = " + x1);
+            System.out.println("x2 = " + x2);
         }
+    }
+        
+
         
     }
 }
