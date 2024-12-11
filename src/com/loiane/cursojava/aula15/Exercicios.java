@@ -22,7 +22,7 @@ public class Exercicios {
         System.out.println("Forneça um valor: ");
         double valor1 = scan.nextDouble();
 
-        if (valor1 > 0) {
+        if (valor1 >= 0) {
             System.out.println("O número é positivo.");
         } else {
             System.out.println("O número é negativo.");
@@ -60,7 +60,7 @@ public class Exercicios {
             //5 leitura de duas notas e calcular a média
             System.out.println("Digite a primeira nota: ");
             double nota1 = scan.nextDouble();
-            System.out.println("Digite a primeira nota: ");
+            System.out.println("Digite a segunda nota: ");
             double nota2 = scan.nextDouble();
             double media = (nota1 + nota2) /2;
 
@@ -648,6 +648,29 @@ switch (opcao) {
 
  */
 
-    }  
-    
+//versão da professora
+        System.out.println("Entre com primeiro número:");
+        int num1 = scan.nextInt();
+
+        System.out.println("Entre com segundo número:");
+        int num2 = scan.nextInt();
+
+        System.out.println("Entre com terceiro número:");
+        int num3 = scan.nextInt();
+
+        if(num1 <= num2 && num1 <= num3 && num2 <= num3){
+            System.out.println(num3 + " - " + num2 + " - " + num1);
+        } else if(num1 <= num2 && num1 <= num3 && num3 <= num2){
+            System.out.println(num2 + " - " + num3 + " - " + num1);
+            } else if(num2 <= num1 && num2 <= num3 && num1 <= num3){
+                    System.out.println(num3 + " - " + num1 + " - " + num2);    
+        } else if(num2 <= num1 && num2 <= num3 && num3 <= num1){
+                    System.out.println(num1 + " - " + num3 + " - " + num2);  
+        } else if(num3 <= num1 && num3 <= num2 && num2 <= num1){
+                    System.out.println(num1 + " - " + num2 + " - " + num3);  
+        } else if(num3 <= num1 && num3 <= num2 && num1 <= num2){
+                    System.out.println(num2 + " - " + num1 + " - " + num3);  
+        }
+        
+    }
 }
