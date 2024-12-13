@@ -48,21 +48,25 @@ public class Exercicios {
         do {            
             System.out.println("Idade: entre 0 e 150");
             idade = scan.nextInt();
-        }while (idade >= 0 || idade <= 150);   
+        }while (idade < 0 || idade > 150);   
 
         do {
             System.out.println("Salario: maior que zero" );
             salario = scan.nextDouble();
-        }while (salario > 0);  
+        }while (salario <= 0);  
 
+        /*
         do {
             System.out.println("Sexo: 'f' ou 'm.'");
+            sexo = scan.next();
 
-        }while (sexo.equalsIgnoreCase("f") || sexo.equalsIgnoreCase("m"));
-            
+        }while (!sexo.equalsIgnoreCase("f") || !sexo.equalsIgnoreCase("m"));
+            */
+        
         do {
             System.out.println("Estado Civil: 's', 'c', 'v', 'd'");
-        }while (estadoCivil.contains('s') || estadoCivil.contains("c") || estadoCivil.contains("v") || estadoCivil.contains("d"));  
+            estadoCivil = scan.next();
+        }while (estadoCivil.contains("s") || estadoCivil.contains("c") || estadoCivil.contains("v") || estadoCivil.contains("d"));  
             
         
 
