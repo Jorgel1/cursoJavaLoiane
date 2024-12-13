@@ -1,4 +1,5 @@
-package com.loiane.cursojava.aula16;
+
+// package com.loiane.cursojava.aula16;
 
 public class CurtoCircuito {
     public static void main(String[] args) {
@@ -16,5 +17,6 @@ public class CurtoCircuito {
         System.out.println(resultado);
 
     }
+
 
 }
