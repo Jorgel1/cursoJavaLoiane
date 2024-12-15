@@ -17,7 +17,7 @@ public class Exercicios {
             }
         } while(nota < 0 || nota > 10);
 
-         //3 nome de usuário e senha:
+         //2 nome de usuário e senha:
         System.out.println("Informe o nome do usuário:");
         String nomeUsuario = scan.next();
         String senhaUsuario;        
@@ -30,7 +30,7 @@ public class Exercicios {
         }while (nomeUsuario.equals(senhaUsuario));
         System.out.println("Usuário conectado ...");
 
-        //4 validar 5 informações:
+            //3 validar 5 informações:
 
         System.out.println("Valide as seguintes informacoes: ");
         String nome;
@@ -73,8 +73,15 @@ public class Exercicios {
 
         }while (!sair);
 
+        System.out.println("Informações salvas: ");
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Salário: " + salario);
+        System.out.println("Sexo: " + sexo);
+        System.out.println("Estado civil: " + estadoCivil);
 
-        //5 quantos anos para igualar a populaçao
+
+        //4 quantos anos para igualar a populaçao
 
         int populacaoA = 80000;
         int populacaoB = 200000;
@@ -160,7 +167,7 @@ public class Exercicios {
         System.out.println("O maior é " + numMax);
 
 
-        //8 leia 5 números e informar a soma e a média deles.
+    //8 leia 5 números e informar a soma e a média deles.
 
         int num;
         double numSoma = 0;
@@ -172,9 +179,9 @@ public class Exercicios {
             num = scan.nextInt();
             numSoma += num;
         }
-
+        numMedia = numSoma / 5;
         System.out.println("A soma dos números: " + numSoma);
-        System.out.println("A média dos números: " + (numMedia = numSoma / 5));
+        System.out.println("A média dos números: " + numMedia);
 
 
         //9 imprimir números ímpares entre 1 e 50
@@ -195,7 +202,7 @@ public class Exercicios {
         int numB = scan.nextInt();
 
         System.out.println("O intervalo entre os números " + numA + " e " + numB);
-        for (int i = numA + 1; i < numB; i++) {
+        for (int i = numA; i <= numB; i++) {
             System.out.print(i + " ");
         }
 
@@ -209,7 +216,7 @@ public class Exercicios {
         int numB = scan.nextInt();
 
         System.out.println("O intervalo entre os números " + numA + " e " + numB);
-        for (int i = numA + 1; i < numB; i++) {
+        for (int i = numA; i <= numB; i++) {
             System.out.print(i + " ");
             numSoma += i;
         }
@@ -228,12 +235,108 @@ public class Exercicios {
             System.out.println(num + " x " + i + " = " + num * i);
         }
 
+        //13 calculo de potência
+
+        int base;
+        int expoente;
+        int resultado;
+
+        System.out.println("Informe a base da potência: ");
+        base = scan.nextInt();
+
+        System.out.println("Informe o expoente da potência: ");
+        expoente = scan.nextInt();
+        resultado = base;
+        if (expoente == 0){
+            resultado = 1;
+        } else if (expoente == 1) {
+            resultado = base;
+        } else {
+            for (int i = 2; i <= expoente; i++) {
+                resultado *= base;
+            }
+        }
+        System.out.println("A potência de " + base + " elevado ao " + expoente + " é: " + resultado);
+
+
+
+        //14 Informe 10 números e mostres os pares e os ímpares
+
+        int num;
+        int numPar = 0;
+        int numImpar = 0;
+
+        System.out.println("Informe 10 números:");
+        for (int i = 0; i < 10; i++) {
+            num = scan.nextInt();
+            if (num % 2 ==  0) {
+                numPar++;
+            } else {
+                numImpar++;
+            }
+        }
+        System.out.println("Quantidade de números pares: " + numPar);
+        System.out.println("Quantidade de números ímpares: " + numImpar);
+
+
+
+        //15 fibonacci até um certo termo
+
+        System.out.println("Informe um certo número de termo para cálculo do fibonacci: ");
+        int numTermo = scan.nextInt();
+        System.out.println("Seguência Fibonacci de acordo com o termo de número " + numTermo + ":");
+        int resultado = 0;
+        int anterior = 0;
+        int atual = 1;
+
+            for (int i = 1; i <= numTermo; i++) {
+                if (i == 1){
+                    System.out.print(resultado + " ");
+                }
+                if (i == 2){
+                    resultado = 1;
+                    System.out.print(resultado + " ");
+                }
+                if (i > 2) {
+                    resultado = anterior + atual;
+                    System.out.print(resultado + " ");
+                    anterior = atual;
+                    atual = resultado;
+                }
+            }
+
+
+
+        //16 fibonacci até um certo termo
+
+        System.out.println("Informe um certo número de termo para cálculo do fibonacci: ");
+        int numTermo = Integer.MAX_VALUE;
+        System.out.println("Seguência Fibonacci de acordo com o termo de número " + numTermo + ":");
+        int resultado = 0;
+        int anterior = 0;
+        int atual = 1;
+        int valorSolicitado = 500;
+
+        for (int i = 1; i <= numTermo; i++) {
+            if (i == 1){
+                System.out.print(resultado + " ");
+            }
+            if (i == 2){
+                resultado = 1;
+                System.out.print(resultado + " ");
+            }
+            if (i > 2) {
+                resultado = anterior + atual;
+                System.out.print(resultado + " ");
+                anterior = atual;
+                atual = resultado;
+               if (resultado >= valorSolicitado){
+                   numTermo = i;
+               }
+            }
+        }
 
  */
-
-
-
-
 
 
 
