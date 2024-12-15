@@ -228,6 +228,7 @@ public class Exercicios {
             System.out.println(num + " x " + i + " = " + num * i);
         }
 
+
  */
 
 
