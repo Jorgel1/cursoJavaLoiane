@@ -336,7 +336,64 @@ public class Exercicios {
             }
         }
 
+
+
+        //17 calcular o fatorial de um determinado número
+        System.out.println("Informe o número do fatorial: ");
+        int num = scan.nextInt();
+        int fat = num;
+
+        for (int i = num; i > 0; i--) {
+            if (i >= 2) {
+                System.out.println(fat + " x " + (i - 1) + " ");
+                fat *= i - 1;
+            }
+        }
+        System.out.println("Fatorial de " + num + " é: " + fat);
+
+
+
+        //18 Determinar se é um número primo:
+
+        System.out.println("Informe um número para verificar se é primo:");
+        int num = scan.nextInt();
+        boolean verifica = true;
+        if (num > 1) {
+            for (int i = 2; i < num; i++) {
+
+                if (num % i == 0) {
+                    verifica = false;
+                }
+            }
+           if (verifica){
+               System.out.println(num + " É primo");
+           } else {
+               System.out.println(num + " Não é primo");
+           }
+        } else {
+            System.out.println("Informe um número maior que 1!");
+        }
+
+
+
+        //19 media aritmética
+        int num = 4;
+        double soma = 0;
+        double mediaAritmetica;
+
+        System.out.println("Informe " + num + " para calcular a média aritmética:");
+
+        for (int i = 0; i < num; i++) {
+            soma += scan.nextInt();
+        }
+            mediaAritmetica = soma / num;
+            System.out.println("Média aritmética de " + num + " números é: " + mediaAritmetica);
+
+
  */
+        //20
+
+
 
 
 
