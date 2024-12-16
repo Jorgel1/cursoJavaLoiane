@@ -390,8 +390,135 @@ public class Exercicios {
             System.out.println("Média aritmética de " + num + " números é: " + mediaAritmetica);
 
 
+
+        //20 media de idade, 0 e 25, 26 e 60, e maior de 60,
+        // então dizer se a turma é jovem, adulta ou idosa
+
+        int pessoas;
+        int qtdPessoas = 4;
+        double somaIdade = 0;
+        double mediaIdade;
+
+        System.out.println("Insira a idade de " + qtdPessoas + " para a classificação: ");
+        for (int i = 0; i < qtdPessoas; i++) {
+            System.out.println("Informe a idade da pessoa de número " + (i + 1));
+            pessoas = scan.nextInt();
+            somaIdade += pessoas;
+        }
+
+        mediaIdade = somaIdade / qtdPessoas;
+        System.out.println("media: " + mediaIdade);
+        if (mediaIdade >= 0 && mediaIdade <= 25){
+            System.out.println("A turma é jovem.");
+        } else if (mediaIdade >= 26 && mediaIdade <= 60){
+            System.out.println("A turma é adulta.");
+        } else {
+            System.out.println("A turma é idosa.");
+        }
+
+
+
+        //21 calcular a media de alunos por turma.
+
+        int alunos;
+        int qtdTurma;
+        double somaAlunos = 0;
+        double mediaAlunos;
+
+        System.out.println("Insira a quantidade de  turmas para a classificação: ");
+        qtdTurma = scan.nextInt();
+        for (int i = 0; i < qtdTurma; i++) {
+            System.out.println("Informe a quantidade de até 40 alunos para a turma de número " + (i + 1));
+            alunos = scan.nextInt();
+            somaAlunos += alunos;
+        }
+
+        mediaAlunos = somaAlunos / qtdTurma;
+        System.out.println("media: " + mediaAlunos + " alunos para cada turma");
+
+
+        //22 media gasto pelo colecionador por cada cd.
+
+        int valor;
+        int qtdCd;
+        double somaValor = 0;
+        double mediaValorCd;
+
+        System.out.println("Insira a quantidade de  CDs: ");
+        qtdCd = scan.nextInt();
+        for (int i = 0; i < qtdCd; i++) {
+            System.out.println("Informe o valor investido pelo CD de número " + (i + 1));
+            valor = scan.nextInt();
+            somaValor += valor;
+        }
+
+        mediaValorCd = somaValor / qtdCd;
+        System.out.println("media de valor investido por cada CD: R$" + mediaValorCd);
+
+
+
+        //23 montar uma tabela de preços do número 1 até o número 50, do valor 1.99 até 99.99
+        // Lojas Quase Dois - Tabela de preços
+        // ex: 1 - R$ 1.99
+
+        int qtdItens;
+        double valorItens;
+
+        System.out.println("Informe a quantidade de itens: ");
+        qtdItens = scan.nextInt();
+
+        System.out.println("Lojas Quase Dois - Tabela de preços");
+        for (int i = 0; i < qtdItens; i++) {
+            System.out.print((i + 1) + " - R$ " );
+            valorItens = scan.nextDouble();
+        }
+
+
+
+        //24 tabela de preço informado apartir do usuário
+
+        int qtdItens;
+        double valorItens;
+
+        System.out.println("Informe a quantidade de itens: ");
+        qtdItens = scan.nextInt();
+
+        System.out.println("Panificadora Pão de Ontem - Tabela de preços");
+        for (int i = 0; i < qtdItens; i++) {
+            System.out.print((i + 1) + " - R$ " );
+            valorItens = scan.nextDouble();
+        }
+
  */
-        //20
+        //25 caixa registradora
+        int qtdItens = Integer.MAX_VALUE;
+        double valorItens = -1;
+        double somaValor = 0;
+        double dinheiro;
+        double troco;
+
+        System.out.println("    Lojas Tabajara");
+        for (int j = 0; j < qtdItens; j++) {
+
+        do {
+            for (int i = 0; i < qtdItens; i++) {
+                System.out.print("    Produto " + (i + 1) + ": R$ ");
+                valorItens = scan.nextDouble();
+                somaValor += valorItens;
+            }
+        } while (valorItens != 0);
+        System.out.print("  Dinheiro: R$ ");
+        dinheiro = scan.nextDouble();
+        troco = somaValor - dinheiro;
+
+        System.out.print("  Troco: R$ " + troco);
+    }
+
+
+
+
+
+
 
 
 
