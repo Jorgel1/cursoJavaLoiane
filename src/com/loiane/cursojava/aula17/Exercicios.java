@@ -489,40 +489,171 @@ public class Exercicios {
             valorItens = scan.nextDouble();
         }
 
- */
+
         //25 caixa registradora
         int qtdItens = Integer.MAX_VALUE;
+        int i = 0;
         double valorItens = -1;
         double somaValor = 0;
         double dinheiro;
         double troco;
-
-        System.out.println("    Lojas Tabajara");
+        
         for (int j = 0; j < qtdItens; j++) {
-
-        do {
-            for (int i = 0; i < qtdItens; i++) {
+            System.out.println("\n    Lojas Tabajara");
+            i = 0;  
+            do {            
                 System.out.print("    Produto " + (i + 1) + ": R$ ");
                 valorItens = scan.nextDouble();
-                somaValor += valorItens;
-            }
-        } while (valorItens != 0);
-        System.out.print("  Dinheiro: R$ ");
+                somaValor += valorItens;                
+                i++;
+            } while (valorItens != 0);
+        System.out.println("    Total: R$ " + somaValor);
+        System.out.print("    Dinheiro: R$ ");
         dinheiro = scan.nextDouble();
-        troco = somaValor - dinheiro;
+        troco = dinheiro - somaValor;
 
-        System.out.print("  Troco: R$ " + troco);
+        System.out.println("    Troco: R$ " + troco);
     }
 
+     
+
+        //26 Fatorial de: 5
+        //   5! =  5 * 4 * 3 * 2 * 1 = 120
+
+        System.out.print("Fatorial de: ");
+        int num = scan.nextInt();
+        int fat = num;
+
+        System.out.print(num + "! = ");
+        for (int i = num; i > 0; i--) {
+            if (i >= 2) {                
+                fat *= i - 1;
+            } 
+            System.out.print(i);
+            if(i > 1){
+                System.out.print(" * ");
+            }
+        }
+        System.out.println(" = " + fat);
+
+
+
+//27 maior, menor e a média das temperaturas
+double maiorTemp = Double.MIN_VALUE;
+double menorTemp = Double.MAX_VALUE;
+double mediaTemp = 0;
+double temperatura;
+double somaTemp = 0;
+double qtdTemp;
+
+System.out.println("Informe a quantidade de tempraturas:");
+qtdTemp = scan.nextDouble();
+
+for (int i = 0; i < qtdTemp; i++) {
+    System.out.print("Temperatura de número " + (i + 1) + ": ");
+    temperatura = scan.nextDouble();
+    somaTemp += temperatura;
+    mediaTemp = somaTemp / qtdTemp;
+    if (temperatura > maiorTemp) {
+        maiorTemp = temperatura;
+    }
+    if (temperatura < menorTemp) {
+        menorTemp = temperatura;
+    }
+}
+System.out.println("Quantidade de temperaturas: " + qtdTemp);
+System.out.println("Maior temperatura: " + maiorTemp + "ºC");
+System.out.println("Menor temperatura: " + menorTemp + "ºC");
+System.out.println("Temperatura média: " + mediaTemp + "ºC");
+
+
+
+//28 Determinar se é um número primo
+
+System.out.println("Informe um número para verificar se é primo:");
+int num = scan.nextInt();
+boolean verifica = true;
+if (num > 1) {
+    for (int i = 2; i < num; i++) {
+
+        if (num % i == 0) {
+            verifica = false;
+        }
+    }
+   if (verifica){
+       System.out.println(num + " É primo");
+   } else {
+       System.out.println(num + " Não é primo");
+   }
+} else {
+    System.out.println("Informe um número maior que 1!");
+}
+
+
+
+//29 Determinar quantos números primos há de 1 até um determinado número.
+
+System.out.println("Informe valor para verificar se há números primos:");
+int num = scan.nextInt();
+boolean primo = true;
+
+if (num > 1) {    
+         if (num == 2) {
+            System.out.println("O número " + num + " não tem números primos.");
+            
+         } else {      
+                System.out.println("Segue os números primos de " + num + ":"); 
+                for (int i = 3; i <= num; i++) {         
+                    for (int j = 2; j < i; j++){           
+                        if (i % j == 0) {
+                            primo = false;
+                        }                         
+                    }
+                    if (primo) {
+                        System.out.print(i + " ");                            
+                    }
+                    primo = true;
+                }
+            }
+} else {
+    System.out.println("Informe um número maior que 1!");
+}
+System.out.println();
 
 
 
 
+//30 tabuada com o número inicial e final escolhidos pelo usuário.
+
+System.out.print("    Montar a tabuada de: ");
+int tabuada = scan.nextInt();
+
+System.out.print("    Começar por: ");
+int tabuadaInic = scan.nextInt();
+int tabuadaFinal;
+
+boolean verificar = false;
+do {
+    System.out.print("    Terminar por: ");
+    tabuadaFinal = scan.nextInt();
+    if (tabuadaFinal < tabuadaInic) {
+        System.out.println("O número final da tabuada não pode ser menor que o inicial.");       
+    } else {
+        verificar = true;
+    }
+} while(!verificar);
 
 
+System.out.println("\n    Vou montar a tabuada de " + tabuada +
+ " começando em " + tabuadaInic + " e terminando em " + tabuadaFinal + ":");
 
+ for (int i = tabuadaInic; i <= tabuadaFinal; i++) {
+    System.out.println("    " + tabuada + " x " + i + " = " + (tabuada * i));
+ }
 
+ */
 
+ //31
 
     }
     
