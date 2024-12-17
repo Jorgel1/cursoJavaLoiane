@@ -651,9 +651,95 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
     System.out.println("    " + tabuada + " x " + i + " = " + (tabuada * i));
  }
 
- */
 
- //31
+
+ //31 1995 salario = 1000, 1996 salario + 1,5%, apartir de 1997 salario +(1,5 * 2).
+        // Após isso, o usuário que define o salario inicial.
+
+        double percent = 1.5;
+        int anoInicial = 1995;
+        int anoFinal = 2024;
+
+        System.out.println("Informe o valor do salário inicial:");
+        double salario = scan.nextDouble();
+
+        for (int i = anoInicial; i <= anoFinal; i++) {
+            if (i == 1995) {
+                System.out.println("Salário em " + i + " : R$ " + salario + "\n");
+            } else {
+                salario += (salario / 100) * percent;
+                System.out.println("Salário em " + i + " : R$ " + salario);
+                System.out.println("Percentual de aumento salarial: " + percent + "\n");
+                percent = percent * 2;
+            }
+        }
+
+
+
+        //32 calcular o preço total de acordo com o código do produto e a quantidade.
+
+        double valor = 0;
+        double precoTotal = 0;
+        int codigoProduto;
+        double qtdProduto;
+
+            do {
+                System.out.println();
+                System.out.println("    Especificação   Código  Preço");
+                System.out.println("    Cachorro Quente 100  R$ 1,20");
+                System.out.println("    Bauru Simples   101  R$ 1,30");
+                System.out.println("    Bauru com ovo   102  R$ 1,50");
+                System.out.println("    Hambúger        103  R$ 1,20");
+                System.out.println("    Cheeseburger    104  R$ 1,30");
+                System.out.println("    Refrigerante    105  R$ 1,00");
+
+                System.out.println("\nInforme o código do produto:");
+                System.out.println("Digite zero(0) para sair.");
+                codigoProduto = scan.nextInt();
+
+                if (codigoProduto != 0) {
+
+                    System.out.println("Informe a quantidade desse produto: ");
+                    qtdProduto = scan.nextDouble();
+
+                    switch (codigoProduto) {
+                        case 100:
+                            valor = 1.20 * qtdProduto;
+                            break;
+                        case 101:
+                            valor = 1.30 * qtdProduto;
+                            break;
+                        case 102:
+                            valor = 1.50 * qtdProduto;
+                            break;
+                        case 103:
+                            valor = 1.20 * qtdProduto;
+                            break;
+                        case 104:
+                            valor = 1.30 * qtdProduto;
+                            break;
+                        case 105:
+                            valor = 1.00 * qtdProduto;
+                            break;
+                        default:
+                            if (codigoProduto != 0) {
+                                System.out.println("Código não exite! ");
+                            }
+                    }
+                    precoTotal += valor;
+                    valor = 0;
+                }
+
+            } while (codigoProduto != 0);
+
+        System.out.println("Valor total: " + precoTotal);
+
+
+ */
+        //33
+
+
+
 
     }
     
