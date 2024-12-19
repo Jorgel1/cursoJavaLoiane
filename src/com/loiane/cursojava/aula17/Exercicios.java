@@ -788,7 +788,7 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
         }
         System.out.println();
         System.out.println("A soma da série: " + resultado);
-      */
+      
 
         //36 mostrar os n termos da Série e mostrar a soma deles.
 
@@ -821,7 +821,8 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
         recebeConciente = conciente;
         resultado += (1/recebeConciente);
 
-
+*/
+//corrigido exercicio 10
 
 
 
