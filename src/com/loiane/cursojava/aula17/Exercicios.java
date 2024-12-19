@@ -735,8 +735,92 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
         System.out.println("Valor total: " + precoTotal);
 
 
- */
-        //33
+ 
+        //33 mostrar os n termos da Série e mostrar a soma deles.
+
+        
+
+        System.out.println("Forneça a quantidade de termos:");
+        int numTermo = scan.nextInt();
+        int conciente = 1;
+        int resultadoNumerador = 0;
+        int resultadoDenominador = 0;
+
+        System.out.print("S = ");
+        for (int i = 1; i <= numTermo; i++) {
+            System.out.print(i + "/" + conciente);
+            if (i < numTermo) {
+                System.out.print(" + ");
+            }
+            
+            resultadoNumerador += i;
+            resultadoDenominador += conciente;
+            conciente += 2;
+        }
+        System.out.println();
+        System.out.println("A soma da série: " + resultadoNumerador + "/" + resultadoDenominador);
+        
+        
+
+        //34 calcular o valor de H com N termos.
+
+        System.out.println("Forneça a quantidade de termos:");
+        int numTermo = scan.nextInt();
+        int conciente = 1;
+        double resultado = 0;
+        double recebeConciente;
+
+        System.out.print("H = ");
+        for (int i = 1; i <= numTermo; i++) {
+            if (i == 1) {
+                System.out.print("1"); 
+            } else {
+                System.out.print("1" + "/" + conciente);
+            }
+            if (i < numTermo) {
+                System.out.print(" + ");
+            }
+            recebeConciente = conciente;
+            resultado += (1/recebeConciente);
+            //System.out.println("#" + (1/recebeConciente));
+            conciente++;
+            
+        }
+        System.out.println();
+        System.out.println("A soma da série: " + resultado);
+      */
+
+        //36 mostrar os n termos da Série e mostrar a soma deles.
+
+
+
+        System.out.println("Forneça a quantidade de termos:");
+        int numTermo = scan.nextInt();
+        int conciente = 1;
+        double resultado = 0;
+        double recebeConciente;
+
+        System.out.print("H = ");
+        for (int i = 1; i <= numTermo; i++) {
+            if (i == 1) {
+                System.out.print("1"); 
+            } else {
+                System.out.print("1" + "/" + conciente);
+            }
+            if (i < numTermo) {
+                System.out.print(" + ");
+            }
+            
+            recebeConciente = conciente;
+            resultado += (1/recebeConciente);
+            conciente ++;
+        }
+        System.out.println();
+        System.out.println("H = " + resultado);
+                
+        recebeConciente = conciente;
+        resultado += (1/recebeConciente);
+
 
 
 
