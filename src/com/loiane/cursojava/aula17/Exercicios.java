@@ -336,6 +336,22 @@ public class Exercicios {
             }
         }
 
+        //16 versão da professora
+
+int primeiro = 1;
+int segundo = 1;
+int proximo = 0;
+
+System.out.println(primeiro);
+System.out.println(segundo);
+
+while (proximo <= 500) { 
+    proximo = primeiro + segundo;
+    primeiro = segundo;
+    segundo = proximo;
+
+    System.out.println(proximo);
+}
 
 
         //17 calcular o fatorial de um determinado número
@@ -351,6 +367,20 @@ public class Exercicios {
         }
         System.out.println("Fatorial de " + num + " é: " + fat);
 
+          //17 versão da professora
+
+  System.out.println("Digite um número:");
+  int num = scan.nextInt();
+
+  System.out.println(num + "! =");
+
+  int fatorial = 1;
+  for(int i = num; i > 0;  i--) {
+    fatorial *= i;
+    System.out.println(i);
+  }
+
+  System.out.println("Resultado: " + fatorial);
 
 
         //18 Determinar se é um número primo:
@@ -436,6 +466,32 @@ public class Exercicios {
         mediaAlunos = somaAlunos / qtdTurma;
         System.out.println("media: " + mediaAlunos + " alunos para cada turma");
 
+//21 versão da professora
+
+System.out.println("Entre com o número de turmas:");
+int numTurmas = scan.nextInt();
+
+int numAlunos;
+int soma = 0;
+boolean invalido = true;
+
+for (int i = 1; i <= numTurmas; i++) {
+    invalido = true;
+    do {
+        System.out.println("Entre com o número de alunos" + i);
+        numAlunos = scan.nextInt();
+
+        if (numAlunos <= 40) {
+            invalido = false;
+        } else {
+            System.out.println("Número de alunos inválido. Digite novamente.");
+        }
+    } while(invalido);
+    soma += numAlunos;
+}
+double media = soma / numTurmas;
+
+System.out.println("Média: " + media);
 
         //22 media gasto pelo colecionador por cada cd.
 
@@ -822,7 +878,8 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
         resultado += (1/recebeConciente);
 
 */
-//corrigido exercicio 10
+//corrigido exercicio 21
+
 
 
 
