@@ -897,7 +897,7 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
         resultado += (1/recebeConciente);
 
 */
-//corrigido exercicio 21
+//corrigido exercicio 25 minuto 20
 
 
         //25 versão da professora
