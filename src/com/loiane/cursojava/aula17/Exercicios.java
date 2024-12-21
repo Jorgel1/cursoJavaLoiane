@@ -529,6 +529,15 @@ System.out.println("Média: " + media);
             valorItens = scan.nextDouble();
         }
 
+          //23 versão da professora
+
+        System.out.println("Lojas Quase Dois - Tabela de preços");
+
+        for (int i = 1; i <= 50; i++) {
+            System.out.println(i + " = R$ " + (1.99*i));
+        }
+
+
 
 
         //24 tabela de preço informado apartir do usuário
@@ -544,6 +553,16 @@ System.out.println("Média: " + media);
             System.out.print((i + 1) + " - R$ " );
             valorItens = scan.nextDouble();
         }
+
+           //24 versão da professora
+
+        System.out.println("Preço do pão: R$ 0.18");
+        System.out.println("Panificadora Pão de Ontem - Tabela de preços");
+
+        for (int i = 1; i <= 50; i++) {
+            System.out.println(i + " = R$ " + (0.18*i));
+        }
+
 
 
         //25 caixa registradora
@@ -881,7 +900,57 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
 //corrigido exercicio 21
 
 
+        //25 versão da professora
 
+        //System.out.println("Lojas Tabalaja");
+
+        boolean sair = false;
+        String continuarCompra;
+        int qtdProdutos;
+        double preco;
+        double total;
+        String output;
+        double valorPago, troco;
+
+        do {
+            System.out.println("Deseja informar uma nova compra? S/N");
+            continuarCompra = scan.next();
+            if (continuarCompra.equalsIgnoreCase("S")){
+
+                output = "Lojas Tabalaja\n";
+
+            System.out.println("Digite a quantidade de produtos da compra:");
+            qtdProdutos = scan.nextInt();
+
+            total = 0;
+
+                for (int i = 1; i <= qtdProdutos; i++) {
+                    System.out.println("Informe preço do produto " + i);
+                    preco = scan.nextDouble();
+                    total += preco;
+                    output += "Produto " + i + ": R$ " + preco + "\n";
+
+                }
+                output += "Total: R$ " + total;
+
+                System.out.println("Total: R$ " + total);
+
+                System.out.println("Entre com o valor pago:");
+                valorPago = scan.nextDouble();
+
+                output += "Dinheiro: R$ " + valorPago + "\n";
+
+                troco = total - valorPago;
+
+                output += "Troco: R$ " + troco;
+
+                System.out.println(output);
+            
+            } else {
+                sair = true;
+            }
+
+        } while (!sair);
 
     }
     
