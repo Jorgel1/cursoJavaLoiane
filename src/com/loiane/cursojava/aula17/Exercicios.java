@@ -1,5 +1,6 @@
 package com.loiane.cursojava.aula17;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Exercicios {
@@ -590,6 +591,57 @@ System.out.println("Média: " + media);
         System.out.println("    Troco: R$ " + troco);
     }
 
+         //25 versão da professora
+
+        //System.out.println("Lojas Tabalaja");
+
+        boolean sair = false;
+        String continuarCompra;
+        int qtdProdutos;
+        double preco;
+        double total;
+        String output;
+        double valorPago, troco;
+
+        do {
+            System.out.println("Deseja informar uma nova compra? S/N");
+            continuarCompra = scan.next();
+            if (continuarCompra.equalsIgnoreCase("S")){
+
+                output = "Lojas Tabalaja\n";
+
+            System.out.println("Digite a quantidade de produtos da compra:");
+            qtdProdutos = scan.nextInt();
+
+            total = 0;
+
+                for (int i = 1; i <= qtdProdutos; i++) {
+                    System.out.println("Informe preço do produto " + i);
+                    preco = scan.nextDouble();
+                    total += preco;
+                    output += "Produto " + i + ": R$ " + preco + "\n";
+
+                }
+                output += "Total: R$ " + total;
+
+                System.out.println("Total: R$ " + total);
+
+                System.out.println("Entre com o valor pago:");
+                valorPago = scan.nextDouble();
+
+                output += "Dinheiro: R$ " + valorPago + "\n";
+
+                troco = total - valorPago;
+
+                output += "Troco: R$ " + troco;
+
+                System.out.println(output);
+            
+            } else {
+                sair = true;
+            }
+
+        } while (!sair);
      
 
         //26 Fatorial de: 5
@@ -610,6 +662,22 @@ System.out.println("Média: " + media);
             }
         }
         System.out.println(" = " + fat);
+
+
+         //26 versão da professora
+        //   5! =  5 * 4 * 3 * 2 * 1 = 120
+        System.out.println("Digite um número:");
+        int num = scan.nextInt();
+
+        System.out.println("Fatorial de " + num);
+
+        System.out.print(num + "! = ");
+        int fatorital = 1;
+        for (int i = num; i > 1; i--) {
+            fatorital *= i;
+            System.out.print(i + " . ");            
+            }        
+        System.out.println("1 = " + fatorital);
 
 
 
@@ -664,8 +732,6 @@ if (num > 1) {
     System.out.println("Informe um número maior que 1!");
 }
 
-
-
 //29 Determinar quantos números primos há de 1 até um determinado número.
 
 System.out.println("Informe valor para verificar se há números primos:");
@@ -678,7 +744,7 @@ if (num > 1) {
             
          } else {      
                 System.out.println("Segue os números primos de " + num + ":"); 
-                for (int i = 3; i <= num; i++) {         
+                for (int i = 1; i <= num; i++) {         
                     for (int j = 2; j < i; j++){           
                         if (i % j == 0) {
                             primo = false;
@@ -694,8 +760,6 @@ if (num > 1) {
     System.out.println("Informe um número maior que 1!");
 }
 System.out.println();
-
-
 
 
 //30 tabuada com o número inicial e final escolhidos pelo usuário.
@@ -726,8 +790,6 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
     System.out.println("    " + tabuada + " x " + i + " = " + (tabuada * i));
  }
 
-
-
  //31 1995 salario = 1000, 1996 salario + 1,5%, apartir de 1997 salario +(1,5 * 2).
         // Após isso, o usuário que define o salario inicial.
 
@@ -743,12 +805,12 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
                 System.out.println("Salário em " + i + " : R$ " + salario + "\n");
             } else {
                 salario += (salario / 100) * percent;
-                System.out.println("Salário em " + i + " : R$ " + salario);
-                System.out.println("Percentual de aumento salarial: " + percent + "\n");
-                percent = percent * 2;
-            }
-        }
 
+                DecimalFormat format = new DecimalFormat("###,###.##");
+
+                System.out.println("Salário em " + i + " : R$ " + format.format(salario));
+                System.out.println("Percentual de aumento salarial: " + format.format(percent) + "\n");
+                percent = percent * 2;
 
 
         //32 calcular o preço total de acordo com o código do produto e a quantidade.
@@ -863,11 +925,34 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
         }
         System.out.println();
         System.out.println("A soma da série: " + resultado);
+
+        //35 mostrar os n termos da Série e mostrar a soma deles.
+        
+
+        System.out.println("Forneça a quantidade de termos:");
+        int numTermo = scan.nextInt();
+        int conciente = 1;
+        int resultadoNumerador = 0;
+        int resultadoDenominador = 0;
+
+        System.out.print("S = ");
+        for (int i = 1; i <= numTermo; i++) {
+            System.out.print(i + "/" + conciente);
+            if (i < numTermo) {
+                System.out.print(" + ");
+            }
+            
+            resultadoNumerador += i;
+            resultadoDenominador += conciente;
+            conciente += 2;
+        }
+        System.out.println();
+        System.out.println("A soma da série: " + resultadoNumerador + "/" + resultadoDenominador);
+        
+        
       
 
         //36 mostrar os n termos da Série e mostrar a soma deles.
-
-
 
         System.out.println("Forneça a quantidade de termos:");
         int numTermo = scan.nextInt();
@@ -897,61 +982,15 @@ System.out.println("\n    Vou montar a tabuada de " + tabuada +
         resultado += (1/recebeConciente);
 
 */
-//corrigido exercicio 25 minuto 20
+//corrigido todos os exercicios
 
 
-        //25 versão da professora
 
-        //System.out.println("Lojas Tabalaja");
 
-        boolean sair = false;
-        String continuarCompra;
-        int qtdProdutos;
-        double preco;
-        double total;
-        String output;
-        double valorPago, troco;
+        
 
-        do {
-            System.out.println("Deseja informar uma nova compra? S/N");
-            continuarCompra = scan.next();
-            if (continuarCompra.equalsIgnoreCase("S")){
 
-                output = "Lojas Tabalaja\n";
-
-            System.out.println("Digite a quantidade de produtos da compra:");
-            qtdProdutos = scan.nextInt();
-
-            total = 0;
-
-                for (int i = 1; i <= qtdProdutos; i++) {
-                    System.out.println("Informe preço do produto " + i);
-                    preco = scan.nextDouble();
-                    total += preco;
-                    output += "Produto " + i + ": R$ " + preco + "\n";
-
-                }
-                output += "Total: R$ " + total;
-
-                System.out.println("Total: R$ " + total);
-
-                System.out.println("Entre com o valor pago:");
-                valorPago = scan.nextDouble();
-
-                output += "Dinheiro: R$ " + valorPago + "\n";
-
-                troco = total - valorPago;
-
-                output += "Troco: R$ " + troco;
-
-                System.out.println(output);
-            
-            } else {
-                sair = true;
-            }
-
-        } while (!sair);
-
+    
     }
     
 }
