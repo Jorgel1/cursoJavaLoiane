@@ -439,17 +439,34 @@ public class ExerciciosAula19 {
             }
 
         }
-        */
+        
         //20 vetor com 20 elementos
         double[] vetorA = new double[20];
         double cotacaoDollar = 6.14;
 
-        for (int i = 1; i <= vetorA.length; i++) {
-            vetorA[i] = cotacaoDollar * i;
-            System.out.println(i +" Dollar: R$ " + vetorA[i]);
+        for (int i = 0; i < vetorA.length; i++) {
+            vetorA[i] = cotacaoDollar * (i + 1);
+            System.out.println((i + 1) + " Dollar: R$ " + vetorA[i]);
+        }
+        */
+        //22 gerar aleatoriamente um vetor de 20 elementos com valores de 0 e 1
+
+        int[] vetorA = new int[10];
+        int cont0 = 0;
+        int cont1 = 0;
+
+        for (int i : vetorA) {
+            i = (int)Math.round(Math.random() * 1);
+            System.out.println(i);
+            if (i == 1) {
+                cont0++;
+            } else {
+                cont1++;
+            }
         }
 
-       
+       System.out.println("Percentual de 0: " + (cont0 * 10) + "%");
+       System.out.println("Percentual de 1: " + (cont1 * 10) + "%");
 
     }
 }
