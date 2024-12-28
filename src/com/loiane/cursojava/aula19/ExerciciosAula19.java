@@ -448,7 +448,7 @@ public class ExerciciosAula19 {
             vetorA[i] = cotacaoDollar * (i + 1);
             System.out.println((i + 1) + " Dollar: R$ " + vetorA[i]);
         }
-        */
+
         //22 gerar aleatoriamente um vetor de 20 elementos com valores de 0 e 1
 
         int[] vetorA = new int[10];
@@ -467,6 +467,67 @@ public class ExerciciosAula19 {
 
        System.out.println("Percentual de 0: " + (cont0 * 10) + "%");
        System.out.println("Percentual de 1: " + (cont1 * 10) + "%");
+
+
+
+        // 23 vetor de 10 elementos e uma flag para parar o jogo se não tiver pelo menos um elemento par
+
+
+        int[] vetorA = new int[10];
+        int contPar = 0;
+        boolean parar = false;
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para a pasição " + i);
+            vetorA[i] = scan.nextInt();
+
+        }
+        System.out.println("resultado " + vetorA[8]);
+
+        for (int i = 0; i < vetorA.length; i++) {
+            if (vetorA[i] % 2 == 0) {
+                contPar++;
+                System.out.println("houve par");
+            }
+            if (vetorA[(vetorA.length - 1)] % 2 == 1 && contPar == 0) {
+               parar = true;
+            }
+            if (parar == true) {
+                System.out.println("Sem número par, o processo foi enterrompido");
+                break;
+            }
+        }
+        System.out.println("O processo chegou ao final com " + contPar + " números pares");
+
+         */
+
+         // 24 verificar se é palindromo
+
+        boolean polindromo = true;
+        int[] vetorA = new int[10];
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para a pasição " + i);
+            vetorA[i] = scan.nextInt();
+        }
+
+        for (int i = 0; i < vetorA.length; i++) {
+            if (i < 5) {
+                if (vetorA[i] == vetorA[(vetorA.length - 1) - i]) {
+
+                } else {
+                    polindromo = false;
+                }
+            }
+        }
+
+        if (polindromo) {
+            System.out.println("É políndromo");
+        }
+
+        // 0 - 9   1 - 8    2 - 7  3  - 6   4 - 5
+        // 1 2 345      5 43 2 1
+
 
     }
 }
