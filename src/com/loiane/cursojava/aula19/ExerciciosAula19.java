@@ -499,7 +499,7 @@ public class ExerciciosAula19 {
         }
         System.out.println("O processo chegou ao final com " + contPar + " números pares");
 
-         */
+
 
          // 24 verificar se é palindromo
 
@@ -525,8 +525,130 @@ public class ExerciciosAula19 {
             System.out.println("É políndromo");
         }
 
-        // 0 - 9   1 - 8    2 - 7  3  - 6   4 - 5
-        // 1 2 345      5 43 2 1
+
+
+        //25 criar vetor A B C com 10 elementos cada. Se A for par B recebe 1 e
+        // se for ímpar B recebe 0
+
+        int[] vetorA = new int[10];
+        int[] vetorB = new int[10];
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para a pasição " + i);
+            vetorA[i] = scan.nextInt();
+            if (vetorA[i] % 2 == 0) {
+                vetorB[i] = 1;
+            } else {
+                vetorB[i] = 0;
+            }
+        }
+
+        System.out.println("VetorA");
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println(vetorA[i]);
+        }
+
+        System.out.println("VetorB");
+        for (int i = 0; i < vetorB.length; i++) {
+            System.out.println(vetorB[i]);
+        }
+
+
+
+        //26 se as regras:
+        // A[i] > B[i], C[i] = 1
+        //A[i] < B[i], C[i] = -1
+        //A[i] == B[i], C[i] = 0
+
+        int[] vetorA = new int[10];
+        int[] vetorB = new int[10];
+        int[] vetorC = new int[10];
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+            vetorA[i] = scan.nextInt();
+        }
+
+        for (int i = 0; i < vetorB.length; i++) {
+            System.out.println("Forneça um valor  inteiro para o vetorB na pasição " + i);
+            vetorB[i] = scan.nextInt();
+            if (vetorA[i] > vetorB[i]) {
+                vetorC[i] = 1;
+            } if (vetorA[i] < vetorB[i]) {
+                vetorC[i] = -1;
+            } if (vetorA[i] == vetorB[i]) {
+                vetorC[i] = 0;
+            }
+        }
+
+        System.out.println("VetorA");
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.print(vetorA[i] + " ");
+        }
+        System.out.println();
+
+        System.out.println("VetorB");
+        for (int i = 0; i < vetorB.length; i++) {
+            System.out.print(vetorB[i] + " ");
+        }
+        System.out.println();
+
+        System.out.println("VetorC");
+        for (int i = 0; i < vetorC.length; i++) {
+            System.out.print(vetorC[i] + " ");
+        }
+
+
+
+        //26 se as regras:
+        // A[i] < 7 B[i] = a
+        // A[i] == 7 B[i] = b
+        // A[i] > 7 && A[i] < 10  B[i] = c
+        // A[i] == 10 B[i] = d
+        // A[i] > 10 B[i] = e
+
+        int[] vetorA = new int[10];
+        String[] vetorB = new String[10];
+
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+            vetorA[i] = scan.nextInt();
+        }
+
+        for (int i = 0; i < vetorA.length; i++) {
+            if (vetorA[i] < 7) {
+                vetorB[i] = "a";
+            }
+            if (vetorA[i] == 7) {
+                vetorB[i] = "b";
+            }
+            if (vetorA[i] > 7 && vetorA[i] < 10) {
+                vetorB[i] = "c";
+            }
+            if (vetorA[i] == 10) {
+                vetorB[i] = "d";
+            }
+            if (vetorA[i] > 10) {
+                vetorB[i] = "e";
+            }
+        }
+
+        System.out.println("VetorA");
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.print(vetorA[i] + " ");
+        }
+        System.out.println();
+
+        System.out.println("VetorB");
+        for (int i = 0; i < vetorB.length; i++) {
+            System.out.print(vetorB[i] + " ");
+        }
+
+         */
+
+        //27
+
 
 
     }
