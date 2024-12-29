@@ -871,7 +871,7 @@ public class ExerciciosAula19 {
                 vetorA[i] = (int)Math.pow(2, i);
                 System.out.print(vetorA[i] + " ");
             }
-                */
+                
 
             //37 vetorB vai receber o fatorial do vetorA
             // vetorB = fatorial vetorA
@@ -898,6 +898,8 @@ public class ExerciciosAula19 {
             }
             System.out.println("1 = " + fatorital);
         }
+            */
+            // exercicio 3 corrigido
 
 
                 
