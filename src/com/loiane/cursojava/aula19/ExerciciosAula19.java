@@ -600,7 +600,7 @@ public class ExerciciosAula19 {
 
 
 
-        //26 se as regras:
+        //27 se as regras:
         // A[i] < 7 B[i] = a
         // A[i] == 7 B[i] = b
         // A[i] > 7 && A[i] < 10  B[i] = c
@@ -645,9 +645,244 @@ public class ExerciciosAula19 {
             System.out.print(vetorB[i] + " ");
         }
 
-         */
+         
 
-        //27
+        //28 vetorB[1] = vetorA[10]
+        //   vetorB[2] = vetorA[9] assim por diante
+
+        int[] vetorA = new int[10];
+        int[] vetorB = new int[10];
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+            vetorA[i] = scan.nextInt();            
+        }
+
+        for (int i = 0; i < vetorB.length; i++) {
+            vetorB[9 - i] = vetorA[i];
+        }
+
+        System.out.println("vetorA");
+        for (int i : vetorA) {
+            System.out.println(i);
+        }
+
+        System.out.println("vetorB");
+        for (int i : vetorB) {
+            System.out.println(i);
+        }
+            
+
+        //29 vetorC vai receber vetorA e vetorB, vetorC com 20 elementos
+
+        int[] vetorA = new int[10];
+        int[] vetorB = new int[10];
+        int[] vetorC = new int[20];
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+            vetorA[i] = scan.nextInt();  
+        }
+
+        for (int i = 0; i < vetorB.length; i++) {
+            System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+            vetorB[i] = scan.nextInt();  
+        }
+
+        for (int i = 0; i < vetorC.length; i++) {
+            if (i < vetorA.length) {
+                vetorC[i] = vetorA[i];
+            } else if (i >= vetorA.length) {
+                vetorC[i] = vetorB[i - vetorB.length];
+            }
+        }
+
+        System.out.println();
+        for (int i : vetorC) {
+            System.out.print(i + " ");
+        }
+            
+
+        // 30 vetorA contendo valores pares e ímpares
+         //   vetorB contendo valores pares do vetorA
+         //   vetorC contendo valores ímpares do vetorA
+
+         int[] vetorA = new int[20];
+         String[] vetorB = new String[20];
+         String[] vetorC = new String[20];
+         int contB = 0;
+         int contC = 0;
+
+         for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+            vetorA[i] = scan.nextInt();  
+        }
+
+         for (int i = 0; i < vetorA.length; i++) {
+            if (vetorA[i] % 2 == 0) {
+                vetorB[contB] = vetorA[i] + " ";
+                contB++;
+            } else {
+                vetorC[contC] = vetorA[i] + " ";
+                contC++;
+            }
+         }
+
+         System.out.println("vetorB");
+        for (String i : vetorB) {
+            System.out.print(i + " ");
+        }
+
+        System.out.println("\nvetorC");
+        for (String i : vetorC) {
+            System.out.print(i + " ");
+        }
+        
+
+        // 31 leia o vetorA e se for par armazene no início do vetorB
+        // se for ímpar armazene nas posições restante do vetorB
+
+        int[] vetorA = new int[10];
+        int[] vetorB = new int[10];
+        int contPar = 0;
+        int contImpar = vetorA.length - 1;
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+            vetorA[i] = scan.nextInt(); 
+        }
+
+        for (int i = 0; i < vetorA.length; i++) {
+            if (vetorA[i] % 2 == 0) {
+                vetorB[contPar] = vetorA[i];
+                contPar++;
+            } else {
+                vetorB[contImpar] = vetorA[i];
+                contImpar--;
+            }
+        }
+
+        System.out.println("vetorB");
+        for (int i : vetorB) {
+            System.out.print(i + " ");
+        }
+           
+
+            //32 faça uma tabuada com cada número do vetorA de 5 elementos
+
+            int[] vetorA = new int[5];
+
+            for (int i = 0; i < vetorA.length; i++) {
+                System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+                vetorA[i] = scan.nextInt(); 
+            }
+
+            for (int i = 0; i < vetorA.length; i++) {
+                System.out.println("\nTabuada de " + vetorA[i] + ":");
+                for (int j = 1; j <= 10; j++) {
+                    System.out.println(vetorA[i] + " x " + j + " = " + (vetorA[i] * j));
+                }
+            }
+                
+
+            // 33 vetorA de 10 elmentos e uma mensagem indicando se é primo ou não
+
+            int[] vetorA = new int[10];
+            boolean verifica;
+
+            for (int i = 0; i < vetorA.length; i++) {
+                System.out.println("Informe uma sequência de números para verificar se é primo para o vetorA na pasição " + i);
+                do {
+                    vetorA[i] = scan.nextInt(); 
+                    if (vetorA[i] <= 1) {
+                        System.out.println("Informe um número maior que 1!");
+                    }
+
+                } while (vetorA[i] <= 1);
+            }
+
+            for (int i = 0; i < vetorA.length; i++) {
+                verifica = true;
+
+                for (int j = 2; j < vetorA[i]; j++) {
+
+                    if (vetorA[i] % j == 0) {
+                        verifica = false;
+                    }
+                }
+                if (verifica) {
+                    System.out.println(vetorA[i] + " É primo");
+                } else {
+                    System.out.println(vetorA[i] + " Não é primo");
+                }
+
+            }
+               
+
+                //34 vetorA de 10 elementos e uma relação de quantos números são pares
+
+                int[] vetorA = new int[10];
+                
+
+                for (int i = 0; i < vetorA.length; i++) {
+                    System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+                    vetorA[i] = scan.nextInt(); 
+                }
+
+                for (int i = 0; i < vetorA.length; i++) {
+                    System.out.println("\nQuantidade de pares do número " + vetorA[i] + ": ");
+                    for (int j = 0; j <= vetorA[i]; j++) {
+                        if (j % 2 == 0) {
+                            System.out.print(j + " ");
+                        }
+                    }
+                    System.out.println();
+                } 
+                    
+
+        //35 emprimir a relação de divisores de cada elemento do vetorA
+
+        int[] vetorA = new int[10];
+                
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
+            vetorA[i] = scan.nextInt(); 
+        }
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("\nQuantidade de divisores do número " + vetorA[i] + ": ");
+            for (int j = 2; j <= vetorA[i]; j++) {
+                if (vetorA[i] % j == 0) {
+                    System.out.print(j + " ");
+                }
+            }
+            System.out.println();
+        } 
+            
+
+            //36 vetorA de 11 elementos que vai receber 2 elevado a sua posição
+            // vetorA = 2 elevado a i
+
+            int[] vetorA = new int[11];
+
+            System.out.println("vetorA:");
+            for (int i = 0; i < vetorA.length; i++) {
+                vetorA[i] = (int)Math.pow(2, i);
+                System.out.print(vetorA[i] + " ");
+            }
+                */
+
+            //37 
+
+
+                
+
+                
+    
+            
+        
+
 
 
 
