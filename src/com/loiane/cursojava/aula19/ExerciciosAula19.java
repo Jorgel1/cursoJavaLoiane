@@ -873,7 +873,31 @@ public class ExerciciosAula19 {
             }
                 */
 
-            //37 
+            //37 vetorB vai receber o fatorial do vetorA
+            // vetorB = fatorial vetorA
+
+            int[] vetorA = new int[15];
+
+            for (int i = 0; i < vetorA.length; i++) {
+                System.out.println("Cálculo de fatorial: Forneça um valor para o vetorA na pasição " + i);
+                vetorA[i] = scan.nextInt(); 
+            }
+
+            
+        //   5! =  5 * 4 * 3 * 2 * 1 = 120
+       
+        for (int i = 0; i < vetorA.length; i++) {
+
+            System.out.println("Fatorial de " + vetorA[i]);
+
+            System.out.print(vetorA[i] + "! = ");
+            int fatorital = 1;
+            for (int j = vetorA[i]; j > 1; j--) {
+                fatorital *= j;
+                System.out.print(j + " . ");
+            }
+            System.out.println("1 = " + fatorital);
+        }
 
 
                 
