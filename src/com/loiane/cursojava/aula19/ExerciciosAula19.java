@@ -453,31 +453,32 @@ public class ExerciciosAula19 {
             System.out.println("Indice maior idade: " + indexMaior);
         
 
-        //19  calcular a media e se for maior que 7 o aluno está aprovado
+                //19  calcular a media e se for maior que 7 o aluno está aprovado
         // menor que 7 o aluno está reprovado.
 
-        double[] nota1 = new double[10];
-        double[] nota2 = new double[10];
-        double[] result = new double[10];
+        double[] notas1 = new double[10];
+        double[] notas2 = new double[notas1.length];
+        double[] resultados = new double[notas1.length];
 
-        for (int i = 0; i < nota1.length; i++) {
-        System.out.println("Informe a nota1 na posição " + i);
-        nota1[i] = scan.nextDouble();
+        for (int i = 0; i < notas1.length; i++) {
+            System.out.println("Informe a nota1 na posição " + i);
+            notas1[i] = scan.nextDouble();
 
-        System.out.println("Informe a nota2 na posição " + i);
-        nota2[i] = scan.nextDouble();
+            System.out.println("Informe a nota2 na posição " + i);
+            notas2[i] = scan.nextDouble();
 
-        result[i] = (nota1[i] + nota2[i]) / 2;
+            resultados[i] = (notas1[i] + notas2[i]) / 2;
         }
 
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] >= 7) {
-                System.out.println("O aluno " + i  +" está aprovado com " + result[i] + " pontos" );
+        for (int i = 0; i < resultados.length; i++) {
+            if (resultados[i] >= 7) {
+                System.out.println("O aluno " + i  +" está aprovado com " + resultados[i] + " pontos" );
             } else {
-                System.out.println("O aluno " + i  +" está reprovado com " + result[i] + " pontos" );
+                System.out.println("O aluno " + i  +" está reprovado com " + resultados[i] + " pontos" );
             }
 
         }
+
         
         //20 vetor com 20 elementos
         double[] vetorA = new double[20];
@@ -938,11 +939,11 @@ public class ExerciciosAula19 {
             System.out.println("1 = " + fatorital);
         }
             */
-            // exercicio 18 corrigido
+            // exercicio 22 corrigido
 
 
-                
-      
+
+
 
 
 
