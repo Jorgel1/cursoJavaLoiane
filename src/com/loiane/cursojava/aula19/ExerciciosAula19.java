@@ -453,31 +453,31 @@ public class ExerciciosAula19 {
             System.out.println("Indice maior idade: " + indexMaior);
         
 
-                //19  calcular a media e se for maior que 7 o aluno está aprovado
-        // menor que 7 o aluno está reprovado.
-
-        double[] notas1 = new double[10];
-        double[] notas2 = new double[notas1.length];
-        double[] resultados = new double[notas1.length];
-
-        for (int i = 0; i < notas1.length; i++) {
+           //19  calcular a media e se for maior que 7 o aluno está aprovado
+            // menor que 7 o aluno está reprovado.
+    
+            double[] notas1 = new double[10];
+            double[] notas2 = new double[notas1.length];
+            double[] resultados = new double[notas1.length];
+    
+            for (int i = 0; i < notas1.length; i++) {
             System.out.println("Informe a nota1 na posição " + i);
             notas1[i] = scan.nextDouble();
-
+    
             System.out.println("Informe a nota2 na posição " + i);
             notas2[i] = scan.nextDouble();
-
+    
             resultados[i] = (notas1[i] + notas2[i]) / 2;
-        }
-
-        for (int i = 0; i < resultados.length; i++) {
-            if (resultados[i] >= 7) {
-                System.out.println("O aluno " + i  +" está aprovado com " + resultados[i] + " pontos" );
-            } else {
-                System.out.println("O aluno " + i  +" está reprovado com " + resultados[i] + " pontos" );
             }
-
-        }
+    
+            for (int i = 0; i < resultados.length; i++) {
+                if (resultados[i] >= 7) {
+                    System.out.println("O aluno " + i  +" está aprovado com " + resultados[i] + " pontos" );
+                } else {
+                    System.out.println("O aluno " + i  +" está reprovado com " + resultados[i] + " pontos" );
+                }
+    
+            }
 
         
         //20 vetor com 20 elementos
@@ -539,7 +539,20 @@ public class ExerciciosAula19 {
         }
         System.out.println("O processo chegou ao final com " + contPar + " números pares");
 
+        //versão da professora
 
+                  int[] vetorA = new int[10];
+
+        for (int i = 0; i < vetorA.length; i++) {
+
+            System.out.println("Entre com um número para a posição " + i);
+            vetorA[i] = scan.nextInt();
+
+            if (vetorA[i] % 2 != 0) {
+                break;
+            }
+        }
+      
 
          // 24 verificar se é palindromo
 
@@ -565,13 +578,42 @@ public class ExerciciosAula19 {
             System.out.println("É políndromo");
         }
 
+           // 24 versão da professora
+
+         int[] vetorA = new int[10];
+         boolean palindromo = true;
+
+         for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Entre com um número para a posicão " + i);
+            vetorA[i] = scan.nextInt();           
+         }
+
+         for (int i = 0; i < vetorA.length/2; i++) {
+            if (vetorA[i] != vetorA[(vetorA.length -1) -i]) {
+                palindromo = false;
+                break;
+            }
+         }
+
+         System.out.println("Vetor A = ");
+         for (int i = 0; i < vetorA.length; i++) {
+            System.out.println(vetorA[i] + " ");
+         }
+         System.out.println();
+
+         if (palindromo) {
+            System.out.println("Palindromo");
+         } else {
+            System.out.println("Não é palindromo");
+         }
+     
 
 
-        //25 criar vetor A B C com 10 elementos cada. Se A for par B recebe 1 e
+             //25 criar vetor A B C com 10 elementos cada. Se A for par B recebe 1 e
         // se for ímpar B recebe 0
 
         int[] vetorA = new int[10];
-        int[] vetorB = new int[10];
+        int[] vetorB = new int[vetorA.length];
 
         for (int i = 0; i < vetorA.length; i++) {
             System.out.println("Forneça um valor inteiro para a pasição " + i);
@@ -583,18 +625,44 @@ public class ExerciciosAula19 {
             }
         }
 
-        System.out.println("VetorA");
+        System.out.println("VetorA = ");
         for (int i = 0; i < vetorA.length; i++) {
-            System.out.println(vetorA[i]);
+            System.out.print(vetorA[i] + " ");
         }
+        System.out.println();
 
-        System.out.println("VetorB");
+        System.out.println("VetorB = ");
         for (int i = 0; i < vetorB.length; i++) {
-            System.out.println(vetorB[i]);
+            System.out.print(vetorB[i] + " ");
+        }
+        System.out.println();
+
+         //25 versão da professora
+
+
+        int[] vetorA = new int[10];
+        int[] vetorB = new int[vetorA.length];
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Forneça um valor inteiro para a pasição " + i);
+            vetorA[i] = scan.nextInt();
+           vetorB[i] = (vetorA[i] % 2 == 0) ? 1 : 0;
         }
 
+        System.out.println("VetorA = ");
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.print(vetorA[i] + " ");
+        }
+        System.out.println();
+
+        System.out.println("VetorB = ");
+        for (int i = 0; i < vetorB.length; i++) {
+            System.out.print(vetorB[i] + " ");
+        }
+        System.out.println();
 
 
+      
         //26 se as regras:
         // A[i] > B[i], C[i] = 1
         //A[i] < B[i], C[i] = -1
@@ -621,24 +689,24 @@ public class ExerciciosAula19 {
             }
         }
 
-        System.out.println("VetorA");
+        System.out.print("VetorA = ");
         for (int i = 0; i < vetorA.length; i++) {
             System.out.print(vetorA[i] + " ");
         }
         System.out.println();
 
-        System.out.println("VetorB");
+        System.out.print("VetorB = ");
         for (int i = 0; i < vetorB.length; i++) {
             System.out.print(vetorB[i] + " ");
         }
         System.out.println();
 
-        System.out.println("VetorC");
+        System.out.print("VetorC = ");
         for (int i = 0; i < vetorC.length; i++) {
             System.out.print(vetorC[i] + " ");
         }
-
-
+        System.out.println();
+       
 
         //27 se as regras:
         // A[i] < 7 B[i] = a
@@ -684,6 +752,55 @@ public class ExerciciosAula19 {
         for (int i = 0; i < vetorB.length; i++) {
             System.out.print(vetorB[i] + " ");
         }
+
+
+                 // versão da professora
+            //27 se as regras:
+        // A[i] < 7 B[i] = a
+        // A[i] == 7 B[i] = b
+        // A[i] > 7 && A[i] < 10  B[i] = c
+        // A[i] == 10 B[i] = d
+        // A[i] > 10 B[i] = e
+
+        int[] vetorA = new int[10];
+        char[] vetorB = new char[vetorA.length];
+
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Entre com um número para a pasição " + i);
+            vetorA[i] = scan.nextInt();
+        }
+
+        for (int i = 0; i < vetorA.length; i++) {
+            if (vetorA[i] < 7) {
+                vetorB[i] = 'a';
+            }
+            if (vetorA[i] == 7) {
+                vetorB[i] = 'b';
+            }
+            if (vetorA[i] > 7 && vetorA[i] < 10) {
+                vetorB[i] = 'c';
+            }
+            if (vetorA[i] == 10) {
+                vetorB[i] = 'd';
+            }
+            if (vetorA[i] > 10) {
+                vetorB[i] = 'e';
+            }
+        }
+
+        System.out.print("VetorA= ");
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.print(vetorA[i] + " ");
+        }
+        System.out.println();
+
+        System.out.print("VetorB= ");
+        for (int i = 0; i < vetorB.length; i++) {
+            System.out.print(vetorB[i] + " ");
+        }
+        System.out.println();
+
 
          
 
@@ -939,13 +1056,9 @@ public class ExerciciosAula19 {
             System.out.println("1 = " + fatorital);
         }
             */
-            // exercicio 22 corrigido
+            // exercicio 27 corrigido
 
-
-
-
-
-
+  
 
 
     }
