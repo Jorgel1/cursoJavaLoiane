@@ -1056,12 +1056,11 @@ public class ExerciciosAula19 {
             System.out.println("1 = " + fatorital);
         }
             */
-            // exercicio 27 corrigido
+            // exercicio 27 corrigidos
 
 
-        System.out.println("fazendo uma tentativa de salvar");
 
-        
+
 
     }
 }
