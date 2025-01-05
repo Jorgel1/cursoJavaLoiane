@@ -803,47 +803,48 @@ public class ExerciciosAula19 {
 
 
          
-
-        //28 vetorB[1] = vetorA[10]
+     //28 vetorB[1] = vetorA[10]
         //   vetorB[2] = vetorA[9] assim por diante
 
         int[] vetorA = new int[10];
-        int[] vetorB = new int[10];
+        int[] vetorB = new int[vetorA.length];
 
         for (int i = 0; i < vetorA.length; i++) {
             System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
-            vetorA[i] = scan.nextInt();            
+            vetorA[i] = scan.nextInt();
         }
 
         for (int i = 0; i < vetorB.length; i++) {
-            vetorB[9 - i] = vetorA[i];
+            vetorB[vetorA.length - i - 1] = vetorA[i];
         }
 
-        System.out.println("vetorA");
+        System.out.print("vetorA= ");
         for (int i : vetorA) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
+        System.out.println();
 
-        System.out.println("vetorB");
+        System.out.print("vetorB= ");
         for (int i : vetorB) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
+        System.out.println();
             
 
-        //29 vetorC vai receber vetorA e vetorB, vetorC com 20 elementos
+          //29 vetorC vai receber vetorA e vetorB, vetorC com 20 elementos
 
         int[] vetorA = new int[10];
-        int[] vetorB = new int[10];
-        int[] vetorC = new int[20];
+        int[] vetorB = new int[vetorA.length];
+        int[] vetorC = new int[vetorA.length * 2];
 
         for (int i = 0; i < vetorA.length; i++) {
             System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
-            vetorA[i] = scan.nextInt();  
+            vetorA[i] = scan.nextInt();
         }
 
         for (int i = 0; i < vetorB.length; i++) {
-            System.out.println("Forneça um valor inteiro para o vetorA na pasição " + i);
-            vetorB[i] = scan.nextInt();  
+            System.out.println("Forneça um valor inteiro para o vetorB na pasição " + i);
+            vetorB[i] = scan.nextInt();
         }
 
         for (int i = 0; i < vetorC.length; i++) {
@@ -858,6 +859,45 @@ public class ExerciciosAula19 {
         for (int i : vetorC) {
             System.out.print(i + " ");
         }
+
+
+        // 29 versão da professora
+
+        int[] vetorA = new int[10];
+        int[] vetorB = new int[vetorA.length];
+        int[] vetorC = new int[vetorA.length * 2];
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Entre com o valor na pasição A - " + i);
+            vetorA[i] = scan.nextInt();
+
+            vetorC[i] = vetorA[i];
+        }
+
+        for (int i = 0; i < vetorB.length; i++) {
+            System.out.println("Entre com o valor na pasição B - " + i);
+            vetorB[i] = scan.nextInt();
+
+            vetorC[vetorA.length + i] = vetorB[i];
+        }
+
+        System.out.print("vetorA= ");
+        for (int i : vetorA) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        System.out.print("vetorB= ");
+        for (int i : vetorB) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        System.out.print("vetorC= ");
+        for (int i : vetorC) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
             
 
         // 30 vetorA contendo valores pares e ímpares
@@ -923,6 +963,48 @@ public class ExerciciosAula19 {
         for (int i : vetorB) {
             System.out.print(i + " ");
         }
+
+
+        // 31 versão da professora
+
+        int[] vetorA = new int[20];
+        int[] vetorB = new int[vetorA.length];
+        int[] vetorC = new int[vetorA.length];
+        int posB = 0;
+        int posC = 0;
+
+        for (int i = 0; i < vetorA.length; i++) {
+            System.out.println("Entre com o valor na pasição A - " + i);
+            vetorA[i] = scan.nextInt();
+        }
+
+        for (int i = 0; i < vetorA.length; i++) {
+            if (vetorA[i] % 2 == 0){
+                vetorB[posB] = vetorA[i];
+                posB++;
+            } else {
+                vetorC[posC] = vetorA[i];
+                posC++;
+            }
+        }
+
+        System.out.print("vetorA= ");
+        for (int i : vetorA) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        System.out.print("vetorB= ");
+        for (int i = 0; i < posB; i++) {
+            System.out.print(vetorB[i] + " ");
+        }
+        System.out.println();
+
+        System.out.print("vetorC= ");
+        for (int i = 0; i < posC; i++) {
+            System.out.print(vetorC[i] + " ");
+        }
+        System.out.println();
            
 
             //32 faça uma tabuada com cada número do vetorA de 5 elementos
@@ -1056,9 +1138,7 @@ public class ExerciciosAula19 {
             System.out.println("1 = " + fatorital);
         }
             */
-            // exercicio 27 corrigidos
-
-
+            // exercicio 31 corrigidos
 
 
 
