@@ -183,6 +183,114 @@ public class ExerciciosAula20 {
 
         */
 
+        //5 Modifique programa anterior de maneira a guardar os compromissos de
+        // todo o ano, arganizados por mês, dia e hora (só 8 horas por dia)
+
+
+        String[][][] agendaAno = new String[12][][];
+        String opcao = "";
+        int dia;
+        int hora;
+        int mes;
+        boolean compromisso = false;
+        boolean diaVerdadeiro = false;
+        boolean horaVerdadeira = false;
+
+        // criar os dias de acordo com cada mês.
+        for (int i = 1; i <= agendaAno.length; i++) {
+
+            // criar nesse mês 28 dias
+            if (i == 2) {
+                agendaAno[i] = new String[28][];
+            }
+            // criar nesses meses 30 dias.
+            else if ((i == 4) || (i == 6) || (i == 9) || (i == 11)) {
+                agendaAno[i] = new String[30][];
+            } else {
+                agendaAno[i] = new String[31][];
+            }
+        }
+
+        // menu
+        do {
+            System.out.println("Digite: agendar, consultar ou sair");
+            opcao = scan.next();
+            switch (opcao) {
+                case "agendar": System.out.println("Informe o mes.");
+                    mes = scan.nextInt();
+
+                    // validar os meses que contém menos de 31 dias.
+                    do {
+                    System.out.println("Informe o dia.");
+                    dia = scan.nextInt();
+                        //validar o mês que contém 28 dias.
+                        if (mes == 2 && dia > 28) {
+                            System.out.println("Informe um dia de 0 a 28 para o mês " + mes);
+                        } else {
+                            diaVerdadeiro = true;
+                        }
+                        //validar os meses que contém 30 dias.
+                        if ((mes == 4 && dia > 30) || (mes == 6 && dia > 30) ||
+                                (mes == 9 && dia > 30) || (mes == 11 && dia > 30)) {
+                            System.out.println("Informe um dia de 0 a 30 para o mês " + mes);
+                        } else {
+                            diaVerdadeiro = true;
+                        }
+
+                    } while (!diaVerdadeiro);
+                    diaVerdadeiro = false;
+
+                    do {
+                    System.out.println("Informe a hora entre 8h às 16h.");
+                    hora = scan.nextInt();
+
+                    if (hora >= 8 && hora <= 16) {
+                        horaVerdadeira = true;
+                    }
+
+                    } while (!horaVerdadeira);
+                    horaVerdadeira = false;
+
+
+                    System.out.println("Informe o compromisso.");
+                    agendaAno[mes][dia][hora] = scan.next();
+                    compromisso = true;
+
+                    break;
+                case "consultar": if (!compromisso) {
+                    System.out.println("Não há compromisso na agenda");
+                } else {
+                    for (int i = 1; i <= agendaAno.length; i++) {
+                        System.out.println("Agenda do mês: " + agendaAno[i]);
+
+                        for (int j = 1; j <= agendaAno[i].length; j++) {
+                            System.out.print("dia " + (j));
+
+                            for (int k = 0; k < agendaAno[i][j].length; k++) {
+                                if (agendaAno[i][j][k] != null) {
+                                    System.out.print(" - hora " + j + ": " + agendaAno[i][j][k] + " ");
+                                }
+                            }
+                            System.out.println();
+                        }
+                        System.out.println();
+                    }
+                }
+
+                    break;
+                case "sair": System.out.println("Saindo da agenda ...");
+
+                    break;
+
+                default: if (!opcao.equalsIgnoreCase("agendar") || !opcao.equalsIgnoreCase("consulatar") ||
+                        !opcao.equalsIgnoreCase("sair")) {
+                    System.out.println("Opção inválida");
+                }
+
+            }
+
+        } while (!opcao.equalsIgnoreCase("sair"));
+
         // Aula20 exercicio 04 feito
    
     }
