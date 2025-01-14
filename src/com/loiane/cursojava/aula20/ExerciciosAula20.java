@@ -120,8 +120,70 @@ public class ExerciciosAula20 {
 
         System.out.println("Pares: " + qtdPares + " Ímpares: " + qtdImpares);
 
-         */
 
-        // Aula20 exercicio 03 feito
+         // 4 Faça um programa para armazenar em muma matriz os compromissos
+         // de uma agenda pessoal. Cada dia do mês deve conter 24 horas, onde
+         // para cada uma destas 24 horas podemos associar uma tarefa específica
+         // (compromisso agendado). O programa deve ter menu onde o usuário indica 
+         // o mês que deseja alterar e a hora, entrando em seguida com o compromisso,
+         // ou então, o usuário pode também cosultar a agenda, fornecendo o dia e
+         // a hora para obter o compromisso armazenado.    
+
+        String[][] agendaJaneiro = new String[31][24];
+        String opcao = "";
+        int dia;
+        int hora;
+        boolean compromisso = false;
+
+        do {
+        System.out.println("Digite: agendar, consultar ou sair");
+        opcao = scan.next();
+        switch (opcao) {
+            case "agendar": System.out.println("Informe o dia.");
+                            dia = scan.nextInt();
+                            dia = dia -1;
+
+                            System.out.println("Informe a hora.");
+                            hora = scan.nextInt();
+
+                            System.out.println("Informe o compromisso.");
+                            agendaJaneiro[dia][hora] = scan.next();
+
+                            compromisso = true;
+
+            break;
+            case "consultar": if (!compromisso) {
+            System.out.println("Não há compromisso na agenda");
+            } else {
+                System.out.println("Agenda de Janeiro:");
+                for (int i = 0; i < agendaJaneiro.length; i++) {
+                    System.out.print("dia " + (i+1));
+                    for (int j = 0; j < agendaJaneiro[i].length; j++) {
+                        if (agendaJaneiro[i][j] != null) {
+                            System.out.print(" - hora " + j + ": " + agendaJaneiro[i][j] + " ");                            
+                        }
+                    }
+                    System.out.println();
+                }
+                System.out.println();
+            }
+            
+            break;
+            case "sair": System.out.println("Saindo da agenda ...");
+            
+            break;
+        
+            default: if (!opcao.equalsIgnoreCase("agendar") || !opcao.equalsIgnoreCase("consulatar") || !opcao.equalsIgnoreCase("sair")) {
+                System.out.println("Opção inválida");
+            }
+               
+        }
+
+        } while (!opcao.equalsIgnoreCase("sair"));
+
+        */
+
+        // Aula20 exercicio 04 feito
+   
     }
 }
