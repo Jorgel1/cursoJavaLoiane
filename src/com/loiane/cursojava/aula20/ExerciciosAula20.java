@@ -197,17 +197,17 @@ public class ExerciciosAula20 {
         boolean horaVerdadeira = false;
 
         // criar os dias de acordo com cada mês.
-        for (int i = 1; i <= agendaAno.length; i++) {
+        for (int i = 0; i < agendaAno.length; i++) {
 
             // criar nesse mês 28 dias
-            if (i == 2) {
-                agendaAno[i] = new String[28][];
+            if (i == 1) {
+                agendaAno[i] = new String[28][16];
             }
             // criar nesses meses 30 dias.
-            else if ((i == 4) || (i == 6) || (i == 9) || (i == 11)) {
-                agendaAno[i] = new String[30][];
+            else if ((i == 3) || (i == 5) || (i == 8) || (i == 10)) {
+                agendaAno[i] = new String[30][16];
             } else {
-                agendaAno[i] = new String[31][];
+                agendaAno[i] = new String[31][16];
             }
         }
 
@@ -218,21 +218,23 @@ public class ExerciciosAula20 {
             switch (opcao) {
                 case "agendar": System.out.println("Informe o mes.");
                     mes = scan.nextInt();
+                    mes = mes -1;
 
                     // validar os meses que contém menos de 31 dias.
                     do {
                     System.out.println("Informe o dia.");
                     dia = scan.nextInt();
+                    dia = dia -1;
                         //validar o mês que contém 28 dias.
-                        if (mes == 2 && dia > 28) {
-                            System.out.println("Informe um dia de 0 a 28 para o mês " + mes);
+                        if (mes == 1 && dia > 27) {
+                            System.out.println("Informe um dia de 0 a 28 para o mês " + mes +1);
                         } else {
                             diaVerdadeiro = true;
                         }
                         //validar os meses que contém 30 dias.
-                        if ((mes == 4 && dia > 30) || (mes == 6 && dia > 30) ||
-                                (mes == 9 && dia > 30) || (mes == 11 && dia > 30)) {
-                            System.out.println("Informe um dia de 0 a 30 para o mês " + mes);
+                        if ((mes == 3 && dia > 29) || (mes == 5 && dia > 29) ||
+                                (mes == 8 && dia > 29) || (mes == 10 && dia > 29)) {
+                            System.out.println("Informe um dia de 0 a 30 para o mês " + mes +1);
                         } else {
                             diaVerdadeiro = true;
                         }
@@ -242,7 +244,7 @@ public class ExerciciosAula20 {
 
                     do {
                     System.out.println("Informe a hora entre 8h às 16h.");
-                    hora = scan.nextInt();
+                    hora = scan.nextInt();                    
 
                     if (hora >= 8 && hora <= 16) {
                         horaVerdadeira = true;
@@ -260,15 +262,15 @@ public class ExerciciosAula20 {
                 case "consultar": if (!compromisso) {
                     System.out.println("Não há compromisso na agenda");
                 } else {
-                    for (int i = 1; i <= agendaAno.length; i++) {
-                        System.out.println("Agenda do mês: " + agendaAno[i]);
+                    for (int i = 0; i < agendaAno.length; i++) {
+                        System.out.println("Agenda do mês: " + (i + 1));
 
-                        for (int j = 1; j <= agendaAno[i].length; j++) {
-                            System.out.print("dia " + (j));
+                        for (int j = 0; j < agendaAno[i].length; j++) {
+                            System.out.print("dia " + (j+1));
 
                             for (int k = 0; k < agendaAno[i][j].length; k++) {
                                 if (agendaAno[i][j][k] != null) {
-                                    System.out.print(" - hora " + j + ": " + agendaAno[i][j][k] + " ");
+                                    System.out.print(" - hora " + k + ": " + agendaAno[i][j][k] + " ");
                                 }
                             }
                             System.out.println();
@@ -291,7 +293,7 @@ public class ExerciciosAula20 {
 
         } while (!opcao.equalsIgnoreCase("sair"));
 
-        // Aula20 exercicio 04 feito
+        // Aula20 exercicio 05 feito
    
     }
 }
