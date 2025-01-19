@@ -2,6 +2,7 @@ package com.loiane.cursojava.aula20;
 
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
 import static java.lang.Math.random;
 
 public class ExerciciosAula20 {
@@ -297,6 +298,8 @@ public class ExerciciosAula20 {
 
          */
 
+
+
         // 6- Faça um programa para jogar o jogo da velha. O programa deve permitr que dois jogadores façam uma partida do jogo da velha,
         // usando o computador para ver o tabuleiro. Cada jogador vai alternadamente informando a posição onde deseja colocar a sua
         // peça ('O' ou 'X'). O programa deve impedir jogadas inválidas e determinar automaticamente quando o jogo terminou e quem foi o
@@ -306,20 +309,28 @@ public class ExerciciosAula20 {
         String[][] matrizJogoDaVelha = new String[3][3];
         String strututra = "";
         String celula = "";
+        String jogadorO = "o";
+        String jogadorX = "x";
         int cont = 0;
         String celulaEscolhida;
         boolean jogadaValida = false;
+        boolean terminou = false;
+        boolean jogador1 = true;
+
+        int celulaInt;
+
 
         // inicialização
 
-        System.out.println("\n    Tabuleiro: ");
+
         for (int i = 0; i < matrizJogoDaVelha.length; i++) {
             for (int j = 0; j < matrizJogoDaVelha[i].length; j++) {
 //                matrizJogoDaVelha[i][j] = (int)Math.round(Math.random() * 1);
                 matrizJogoDaVelha[i][j] = celula + cont;
                 cont++;
 
-                        strututra = "-------------------\n" +
+                        strututra = "\n    Tabuleiro: \n" +
+                                "-------------------\n" +
                         "    " + matrizJogoDaVelha[0][0] + "    " + matrizJogoDaVelha[0][1] + "    " + matrizJogoDaVelha[0][2] + "    \n" +
                         "-------------------\n" +
                         "    " + matrizJogoDaVelha[1][0] + "    " + matrizJogoDaVelha[1][1] + "    " + matrizJogoDaVelha[1][2] + "    \n" +
@@ -329,21 +340,72 @@ public class ExerciciosAula20 {
             }
         }
 
-              // menu
-                System.out.println(strututra);
-
         do {
-            System.out.println("Escolha uma célula disponível de 0 a 8");
+
+
+        // menu
+            System.out.println(strututra);
+
+            System.out.println("Escolha uma célula disponível entre 0 a 8:");
             celulaEscolhida = scan.next();
-            if (celulaEscolhida == "x" || celulaEscolhida == "o"){
-                System.out.println("Escolha inválida. Escolha uma célula disponível de 0 a 8");
-            } else {
-                jogadaValida = true;
+            celulaInt = Integer.parseInt(celulaEscolhida);
+            if (celulaInt < 0 || celulaInt > 8){
+                System.out.println("Celula inválida. Escolha uma célula disponível entre 0 a 8:");
+            }else {
+                for (int i = 0; i < matrizJogoDaVelha.length; i++) {
+                    for (int j = 0; j < matrizJogoDaVelha[i].length; j++) {
+
+                        while (!jogadaValida){
+                            //verifica se é jogada válida
+                            if (celulaEscolhida.equalsIgnoreCase("o") || celulaEscolhida.equalsIgnoreCase("x")) {
+                                System.out.println("Escolha inválida. Escolha uma célula disponível entre 0 a 8:");
+                            } else {
+                                // atribui o jogador a celula escolhida válida
+                                if (matrizJogoDaVelha[i][j].equalsIgnoreCase(celulaEscolhida) ) {
+                                    if (jogador1){
+                                        System.out.println("Jogador 1");
+                                    matrizJogoDaVelha[i][j] = "O";
+                                    } else {
+                                        System.out.println("Jogador 2");
+                                        matrizJogoDaVelha[i][j] = "X";
+                                    }
+                                }
+
+
+                                jogadaValida = true;
+                            }
+                        }
+                        jogadaValida = false;
+
+                    }
+                }
+            }
+            // troca de jogador
+            if (jogadaValida) {
+                if (jogador1) {
+                    jogador1 = false;
+                } else {
+                    jogador1 = true;
+                }
             }
 
-        }while (!jogadaValida);
+        }while (!terminou);
+
+
 
         // Aula20 exercicio 06 em andamento
+
+//        String str ="";
+//        System.out.println("EScolha X ou O");
+//        str = scan.next();
+//
+//        if (str.equalsIgnoreCase("x")){
+//            System.out.println("Voce escolheu 'X'");
+//        }else if (str.equalsIgnoreCase("o")){
+//            System.out.println("Voce escolheu 'O'");
+//        } else {
+//            System.out.println("Outro");
+//        }
 
     }
 }
