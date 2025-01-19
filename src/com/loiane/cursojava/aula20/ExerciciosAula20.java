@@ -181,7 +181,7 @@ public class ExerciciosAula20 {
 
         } while (!opcao.equalsIgnoreCase("sair"));
 
-        */
+
 
         //5 Modifique programa anterior de maneira a guardar os compromissos de
         // todo o ano, arganizados por mês, dia e hora (só 8 horas por dia)
@@ -293,7 +293,57 @@ public class ExerciciosAula20 {
 
         } while (!opcao.equalsIgnoreCase("sair"));
 
-        // Aula20 exercicio 05 feito
-   
+
+
+         */
+
+        // 6- Faça um programa para jogar o jogo da velha. O programa deve permitr que dois jogadores façam uma partida do jogo da velha,
+        // usando o computador para ver o tabuleiro. Cada jogador vai alternadamente informando a posição onde deseja colocar a sua
+        // peça ('O' ou 'X'). O programa deve impedir jogadas inválidas e determinar automaticamente quando o jogo terminou e quem foi o
+        // vencedor (jogador1 ou jogador2). A cada nova jogada, o programa deve atualizar a situação do tabuleiro na tela.
+
+
+        String[][] matrizJogoDaVelha = new String[3][3];
+        String strututra = "";
+        String celula = "";
+        int cont = 0;
+        String celulaEscolhida;
+        boolean jogadaValida = false;
+
+        // inicialização
+
+        System.out.println("\n    Tabuleiro: ");
+        for (int i = 0; i < matrizJogoDaVelha.length; i++) {
+            for (int j = 0; j < matrizJogoDaVelha[i].length; j++) {
+//                matrizJogoDaVelha[i][j] = (int)Math.round(Math.random() * 1);
+                matrizJogoDaVelha[i][j] = celula + cont;
+                cont++;
+
+                        strututra = "-------------------\n" +
+                        "    " + matrizJogoDaVelha[0][0] + "    " + matrizJogoDaVelha[0][1] + "    " + matrizJogoDaVelha[0][2] + "    \n" +
+                        "-------------------\n" +
+                        "    " + matrizJogoDaVelha[1][0] + "    " + matrizJogoDaVelha[1][1] + "    " + matrizJogoDaVelha[1][2] + "    \n" +
+                        "-------------------\n" +
+                        "    " + matrizJogoDaVelha[2][0] + "    " + matrizJogoDaVelha[2][1] + "    " + matrizJogoDaVelha[2][2] + "    \n" +
+                        "-------------------\n";
+            }
+        }
+
+              // menu
+                System.out.println(strututra);
+
+        do {
+            System.out.println("Escolha uma célula disponível de 0 a 8");
+            celulaEscolhida = scan.next();
+            if (celulaEscolhida == "x" || celulaEscolhida == "o"){
+                System.out.println("Escolha inválida. Escolha uma célula disponível de 0 a 8");
+            } else {
+                jogadaValida = true;
+            }
+
+        }while (!jogadaValida);
+
+        // Aula20 exercicio 06 em andamento
+
     }
 }
