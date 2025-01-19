@@ -308,71 +308,81 @@ public class ExerciciosAula20 {
 
         String[][] matrizJogoDaVelha = new String[3][3];
         String strututra = "";
-        String celula = "";
         String jogadorO = "o";
         String jogadorX = "x";
+        String jogadorAtivo = "---- Jogador 1 ----";
         int cont = 0;
         String celulaEscolhida;
         boolean jogadaValida = false;
         boolean terminou = false;
         boolean jogador1 = true;
+        boolean inicio = true;
 
         int celulaInt;
 
 
         // inicialização
 
-
-        for (int i = 0; i < matrizJogoDaVelha.length; i++) {
-            for (int j = 0; j < matrizJogoDaVelha[i].length; j++) {
-//                matrizJogoDaVelha[i][j] = (int)Math.round(Math.random() * 1);
-                matrizJogoDaVelha[i][j] = celula + cont;
-                cont++;
-
-                        strututra = "\n    Tabuleiro: \n" +
-                                "-------------------\n" +
-                        "    " + matrizJogoDaVelha[0][0] + "    " + matrizJogoDaVelha[0][1] + "    " + matrizJogoDaVelha[0][2] + "    \n" +
-                        "-------------------\n" +
-                        "    " + matrizJogoDaVelha[1][0] + "    " + matrizJogoDaVelha[1][1] + "    " + matrizJogoDaVelha[1][2] + "    \n" +
-                        "-------------------\n" +
-                        "    " + matrizJogoDaVelha[2][0] + "    " + matrizJogoDaVelha[2][1] + "    " + matrizJogoDaVelha[2][2] + "    \n" +
-                        "-------------------\n";
-            }
-        }
-
         do {
+            for (int i = 0; i < matrizJogoDaVelha.length; i++) {
+                for (int j = 0; j < matrizJogoDaVelha[i].length; j++) {
+    //                matrizJogoDaVelha[i][j] = (int)Math.round(Math.random() * 1);
+                    if (inicio){
+                        matrizJogoDaVelha[i][j] = "" + cont;
+                        cont++;
+                    }
+
+                            strututra = "\n    Tabuleiro: \n" +
+                                    "-------------------\n" +
+                            "    " + matrizJogoDaVelha[0][0] + "    " + matrizJogoDaVelha[0][1] + "    " + matrizJogoDaVelha[0][2] + "    \n" +
+                            "-------------------\n" +
+                            "    " + matrizJogoDaVelha[1][0] + "    " + matrizJogoDaVelha[1][1] + "    " + matrizJogoDaVelha[1][2] + "    \n" +
+                            "-------------------\n" +
+                            "    " + matrizJogoDaVelha[2][0] + "    " + matrizJogoDaVelha[2][1] + "    " + matrizJogoDaVelha[2][2] + "    \n" +
+                            "-------------------\n";
+                }
+            }
+            inicio = false;
+
+
 
 
         // menu
             System.out.println(strututra);
+            System.out.println(jogadorAtivo);
 
             System.out.println("Escolha uma célula disponível entre 0 a 8:");
             celulaEscolhida = scan.next();
             celulaInt = Integer.parseInt(celulaEscolhida);
             if (celulaInt < 0 || celulaInt > 8){
-                System.out.println("Celula inválida. Escolha uma célula disponível entre 0 a 8:");
+                System.out.println("Não existe essa célula!");
             }else {
                 for (int i = 0; i < matrizJogoDaVelha.length; i++) {
                     for (int j = 0; j < matrizJogoDaVelha[i].length; j++) {
 
                         while (!jogadaValida){
-                            //verifica se é jogada válida
+                            //verifica se é jogada válida Fata resolver essa validação
                             if (celulaEscolhida.equalsIgnoreCase("o") || celulaEscolhida.equalsIgnoreCase("x")) {
-                                System.out.println("Escolha inválida. Escolha uma célula disponível entre 0 a 8:");
+                                System.out.println("Esta célula não está disponível!");
                             } else {
                                 // atribui o jogador a celula escolhida válida
                                 if (matrizJogoDaVelha[i][j].equalsIgnoreCase(celulaEscolhida) ) {
                                     if (jogador1){
-                                        System.out.println("Jogador 1");
                                     matrizJogoDaVelha[i][j] = "O";
+                                    // Define o próximo jogador
+                                    jogadorAtivo = "---- Jogador 2 ----";
+                                    jogador1 = false;
                                     } else {
-                                        System.out.println("Jogador 2");
                                         matrizJogoDaVelha[i][j] = "X";
+                                        // Define o próximo jogador
+                                        jogadorAtivo = "---- Jogador 1 ----";
+                                        jogador1 = true;
                                     }
                                 }
 
 
                                 jogadaValida = true;
+                                System.out.println("Jogada válida!");
                             }
                         }
                         jogadaValida = false;
@@ -380,20 +390,13 @@ public class ExerciciosAula20 {
                     }
                 }
             }
-            // troca de jogador
-            if (jogadaValida) {
-                if (jogador1) {
-                    jogador1 = false;
-                } else {
-                    jogador1 = true;
-                }
-            }
+
 
         }while (!terminou);
 
 
 
-        // Aula20 exercicio 06 em andamento
+        // Aula20 exercicio 06 em andamento2
 
 //        String str ="";
 //        System.out.println("EScolha X ou O");
