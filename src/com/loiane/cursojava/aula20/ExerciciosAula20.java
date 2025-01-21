@@ -327,12 +327,15 @@ public class ExerciciosAula20 {
         do {
             for (int i = 0; i < matrizJogoDaVelha.length; i++) {
                 for (int j = 0; j < matrizJogoDaVelha[i].length; j++) {
+
     //                matrizJogoDaVelha[i][j] = (int)Math.round(Math.random() * 1);
+                    // Define uma única vez a marcação de 0 a 9 no tabuleiro.
                     if (inicio){
                         matrizJogoDaVelha[i][j] = "" + cont;
                         cont++;
                     }
 
+                    // Esse tabuleiro será atualizado a cada jogada.
                             strututra = "\n    Tabuleiro: \n" +
                                     "-------------------\n" +
                             "    " + matrizJogoDaVelha[0][0] + "    " + matrizJogoDaVelha[0][1] + "    " + matrizJogoDaVelha[0][2] + "    \n" +
@@ -343,6 +346,7 @@ public class ExerciciosAula20 {
                             "-------------------\n";
                 }
             }
+            // Setando essa variável para falso para não enumerar o tabuleiro de 0 a 9.
             inicio = false;
 
 
@@ -378,10 +382,8 @@ public class ExerciciosAula20 {
                                     jogadaValida = true;
                                     jogadas++;
                                 }
-                        } else {
-                            jogadaValida = false;
-                           
-                        }
+                       }
+
 
                     }
                 }
@@ -389,26 +391,27 @@ public class ExerciciosAula20 {
             if (!jogadaValida) {
                 System.out.println("Esta célula não está disponível!");
             }
+            jogadaValida = false;
             
             if (jogadas >= 3) {
                 if ((matrizJogoDaVelha[0][0].equalsIgnoreCase("O") && matrizJogoDaVelha[0][1].equalsIgnoreCase("O") && matrizJogoDaVelha[0][2].equalsIgnoreCase("O")) ||
-                (matrizJogoDaVelha[1][0].equalsIgnoreCase("O") && matrizJogoDaVelha[2][1].equalsIgnoreCase("O") && matrizJogoDaVelha[3][2].equalsIgnoreCase("O")) ||
+                (matrizJogoDaVelha[1][0].equalsIgnoreCase("O") && matrizJogoDaVelha[1][1].equalsIgnoreCase("O") && matrizJogoDaVelha[1][2].equalsIgnoreCase("O")) ||
                 (matrizJogoDaVelha[2][0].equalsIgnoreCase("O") && matrizJogoDaVelha[2][1].equalsIgnoreCase("O") && matrizJogoDaVelha[2][2].equalsIgnoreCase("O")) ||
                 (matrizJogoDaVelha[0][0].equalsIgnoreCase("O") && matrizJogoDaVelha[1][0].equalsIgnoreCase("O") && matrizJogoDaVelha[2][0].equalsIgnoreCase("O")) ||
                 (matrizJogoDaVelha[0][1].equalsIgnoreCase("O") && matrizJogoDaVelha[1][1].equalsIgnoreCase("O") && matrizJogoDaVelha[2][1].equalsIgnoreCase("O")) ||
                 (matrizJogoDaVelha[0][2].equalsIgnoreCase("O") && matrizJogoDaVelha[1][2].equalsIgnoreCase("O") && matrizJogoDaVelha[2][2].equalsIgnoreCase("O")) ||
                 (matrizJogoDaVelha[0][0].equalsIgnoreCase("O") && matrizJogoDaVelha[1][1].equalsIgnoreCase("O") && matrizJogoDaVelha[2][2].equalsIgnoreCase("O")) ||
-                (matrizJogoDaVelha[0][2].equalsIgnoreCase("O") && matrizJogoDaVelha[1][1].equalsIgnoreCase("O") && matrizJogoDaVelha[3][0].equalsIgnoreCase("O"))) {
+                (matrizJogoDaVelha[0][2].equalsIgnoreCase("O") && matrizJogoDaVelha[1][1].equalsIgnoreCase("O") && matrizJogoDaVelha[2][0].equalsIgnoreCase("O"))) {
                     jogadorO = true;
                     terminou = true;
                 } else if ((matrizJogoDaVelha[0][0].equalsIgnoreCase("X") && matrizJogoDaVelha[0][1].equalsIgnoreCase("X") && matrizJogoDaVelha[0][2].equalsIgnoreCase("X")) ||
-                    (matrizJogoDaVelha[1][0].equalsIgnoreCase("X") && matrizJogoDaVelha[2][1].equalsIgnoreCase("X") && matrizJogoDaVelha[3][2].equalsIgnoreCase("X")) ||
+                    (matrizJogoDaVelha[1][0].equalsIgnoreCase("X") && matrizJogoDaVelha[1][1].equalsIgnoreCase("X") && matrizJogoDaVelha[1][2].equalsIgnoreCase("X")) ||
                     (matrizJogoDaVelha[2][0].equalsIgnoreCase("X") && matrizJogoDaVelha[2][1].equalsIgnoreCase("X") && matrizJogoDaVelha[2][2].equalsIgnoreCase("X")) ||
                     (matrizJogoDaVelha[0][0].equalsIgnoreCase("X") && matrizJogoDaVelha[1][0].equalsIgnoreCase("X") && matrizJogoDaVelha[2][0].equalsIgnoreCase("X")) ||
                     (matrizJogoDaVelha[0][1].equalsIgnoreCase("X") && matrizJogoDaVelha[1][1].equalsIgnoreCase("X") && matrizJogoDaVelha[2][1].equalsIgnoreCase("X")) ||
                     (matrizJogoDaVelha[0][2].equalsIgnoreCase("X") && matrizJogoDaVelha[1][2].equalsIgnoreCase("X") && matrizJogoDaVelha[2][2].equalsIgnoreCase("X")) ||
                     (matrizJogoDaVelha[0][0].equalsIgnoreCase("X") && matrizJogoDaVelha[1][1].equalsIgnoreCase("X") && matrizJogoDaVelha[2][2].equalsIgnoreCase("X")) ||
-                    (matrizJogoDaVelha[0][2].equalsIgnoreCase("X") && matrizJogoDaVelha[1][1].equalsIgnoreCase("X") && matrizJogoDaVelha[3][0].equalsIgnoreCase("X"))) {
+                    (matrizJogoDaVelha[0][2].equalsIgnoreCase("X") && matrizJogoDaVelha[1][1].equalsIgnoreCase("X") && matrizJogoDaVelha[2][0].equalsIgnoreCase("X"))) {
                         jogadorX = true;
                         terminou = true;
                     } else if (jogadas == 9) {
@@ -447,7 +450,7 @@ public class ExerciciosAula20 {
         System.out.println(strututra);
 
 
-        // Aula20 exercicio 06 falta ajustes
+        // Aula20 exercicio 06 finalizado
 
 //        String str ="";
 //        System.out.println("EScolha X ou O");
