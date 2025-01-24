@@ -1,5 +1,6 @@
 package com.loiane.cursojava.aula20;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
@@ -44,6 +45,43 @@ public class ExerciciosAula20 {
                 " linha: " + linha + " coluna: " + coluna);
 
 
+          // versão da professora
+
+        int[][] numerosAleatorios = new int[4][4];
+        int maior = 0;
+        int linha = 0;
+        int col = 0;
+
+        Random numeroRadom = new Random();
+
+        for (int i = 0; i < numerosAleatorios.length; i++) {
+            for (int j = 0; j < numerosAleatorios[i].length; j++) {
+                numerosAleatorios[i][j] = numeroRadom.nextInt(100);
+            }
+        }
+
+        for (int i = 0; i < numerosAleatorios.length; i++) {
+            for (int j = 0; j < numerosAleatorios[i].length; j++) {
+                if (numerosAleatorios[i][j] > maior) {
+                    maior = numerosAleatorios[i][j];
+                    linha = i;
+                    col = j;
+                }
+            }
+        }
+
+        for (int i = 0; i < numerosAleatorios.length; i++) {
+            for (int j = 0; j < numerosAleatorios[i].length; j++) {
+                System.out.print(numerosAleatorios[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Maior valor = " + maior);
+        System.out.println("Linha = " + linha);
+        System.out.println("Coluna = " + col);
+
+
         //2 Gere e imprima uma matriz M 10x10 com valores eleatórios entre 0 e 9.
         // Após isso determine o maior e o menor número da linha 5 e o maior e o menor número da coluna 7
         // sua posição (linha, coluna).
@@ -86,6 +124,56 @@ public class ExerciciosAula20 {
         }
         System.out.println("Maior número da coluna 7 da matriz: " + matrizM[linha][coluna] +
                 " linha: " + linha + " coluna: " + coluna);
+
+
+         // versão da professora
+
+        int[][] numerosAleatorios = new int[10][10];
+        int maiorL5 = 0;
+        int menorL5 = 101;
+        int linha5 = 5;
+
+        int maiorC7 = 0;
+        int menorC7 = 101;
+        int coluna7 = 7;
+
+        Random numeroRadom = new Random();
+
+        for (int i = 0; i < numerosAleatorios.length; i++) {
+            for (int j = 0; j < numerosAleatorios[i].length; j++) {
+                numerosAleatorios[i][j] = numeroRadom.nextInt(100);
+            }
+        }
+
+        for (int i = 0; i < numerosAleatorios.length; i++) {
+            for (int j = 0; j < numerosAleatorios[i].length; j++) {
+                System.out.print(numerosAleatorios[i][j] + " ");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < numerosAleatorios[linha5].length; i++) {
+            if (numerosAleatorios[linha5][i] > maiorL5) {
+                maiorL5 = numerosAleatorios[linha5][i];
+            }
+            if (numerosAleatorios[linha5][i] < menorL5) {
+                menorL5 = numerosAleatorios[linha5][i];
+            }
+        }
+        System.out.println();
+        System.out.println("Maior valor da linha 5 = " + maiorL5);
+        System.out.println("Menor valor da linha 5 = " + menorL5);
+
+        for (int i = 0; i < numerosAleatorios.length; i++) {
+            if (numerosAleatorios[i][coluna7] > maiorC7) {
+                maiorC7 = numerosAleatorios[i][coluna7];
+            }
+            if (numerosAleatorios[i][coluna7] < menorC7) {
+                menorC7 = numerosAleatorios[i][coluna7];
+            }
+        }
+        System.out.println();
+        System.out.println("Maior valor da coluna 7 = " + maiorC7);
+        System.out.println("Menor valor da coluna 7= " + menorC7);
 
 
 
@@ -296,7 +384,7 @@ public class ExerciciosAula20 {
 
 
 
-         */
+
 
 
 
@@ -450,19 +538,17 @@ public class ExerciciosAula20 {
         System.out.println(strututra);
 
 
-        // Aula20 exercicio 06 finalizado
+        // Aula20 exercicio 03 corrigido
 
-//        String str ="";
-//        System.out.println("EScolha X ou O");
-//        str = scan.next();
-//
-//        if (str.equalsIgnoreCase("x")){
-//            System.out.println("Voce escolheu 'X'");
-//        }else if (str.equalsIgnoreCase("o")){
-//            System.out.println("Voce escolheu 'O'");
-//        } else {
-//            System.out.println("Outro");
-//        }
+
+
+         */
+
+
+
+
+
+
 
     }
 }
