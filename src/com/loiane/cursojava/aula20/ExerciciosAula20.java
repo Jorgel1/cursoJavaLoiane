@@ -545,6 +545,18 @@ public class ExerciciosAula20 {
          */
 
 
+        String[][] compromissos = new String[31][24];
+
+        boolean sair = false;
+        byte opcao;
+
+        while (!sair) {
+
+            System.out.println("Digite 1 para adicionar compromisso.");
+            System.out.println("Digite 2 para verificar compromisso.");
+            System.out.println("Digite 0 para sair.");
+
+        }
 
 
 
