@@ -16,6 +16,7 @@ public class ExerciciosAula20 {
 
 
 
+
         int[][] matrizM = new int[4][4];
         int maiorNum = matrizM[0][0];
         int linha = 0;
