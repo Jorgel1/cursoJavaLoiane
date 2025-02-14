@@ -1,5 +1,7 @@
 package com.loiane.cursojava.aula24;
 
+import javax.imageio.ImageReader;
+
 public class ExerciciosAula24 {
     public static void main(String[] args) {
 
@@ -72,10 +74,27 @@ public class ExerciciosAula24 {
         //   número,	um	saldo,	um	status	que	informa	se	ela	é	especial	ou	não,	um
         //   limite.
 
+        ContaCorrente jose = new ContaCorrente();
+
+        jose.numero = 100343;
+        jose.saldo = 12000.00;
+        jose.especial = true;
+        jose.limite = 15000.00;
+
+        System.out.println("\nConta Corrente\nNúmero = " + jose.numero + "\n" +
+                "Saldo = " + jose.saldo + "\nEspecial = " + jose.especial
+                + "\nLimite = " + jose.limite);
 
         //   6. Crie	uma	classe	que	represente	um	contato	da	agenda	do	seu	celular.
 
+        Contato marcio = new Contato();
 
-        //Parei exercicio 5 da aula 24
+        marcio.numeroTelefone = 27999104142L;
+        marcio.nome = "Marcio da Costa";
+
+        System.out.println("\nContato:\nNome = " + marcio.nome + "\n" +
+                "Telefone = " + marcio.numeroTelefone);
+
+        //Finalizei todos os exercicios aula 24
     }
 }
