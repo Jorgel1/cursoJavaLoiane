@@ -1,9 +1,10 @@
 package com.loiane.cursojava.aula24;
 
 public class ContaCorrente {
-    int numero;
-    double saldo;
+    String numero;
+    String agencia;
     boolean especial;
-    double limite;
+    double limiteEspecial;
+    double saldo;
 
 }
