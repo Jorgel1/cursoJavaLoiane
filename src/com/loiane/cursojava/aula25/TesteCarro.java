@@ -14,6 +14,11 @@ public class TesteCarro {
         System.out.println(van.modelo);
         van.exibirAutonomia();
 
+        double autonomia = van.obterAutonomia();
+        System.out.println("Autonomia do carro é: " + autonomia);
+        System.out.println("Autonomia do carro é: " + van.obterAutonomia());
+
+
         Carro fusca = new Carro();
         fusca.marca = "Volkswagem";
         fusca.modelo = "Fusca";
@@ -25,6 +30,8 @@ public class TesteCarro {
         System.out.println(fusca.modelo);
         fusca.exibirAutonomia();
 
-        //parei no video 49/98
+
+
+        //parei no video 50/98
     }
 }
