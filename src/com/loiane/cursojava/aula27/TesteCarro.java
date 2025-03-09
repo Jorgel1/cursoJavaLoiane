@@ -1,4 +1,4 @@
-package com.loiane.cursojava.aula25;
+package com.loiane.cursojava.aula27;
 
 public class TesteCarro {
     public static void main(String[] args) {
@@ -14,9 +14,9 @@ public class TesteCarro {
         System.out.println(van.modelo);
         van.exibirAutonomia();
 
-//        double autonomia = van.obterAutonomia();
-//        System.out.println("Autonomia do carro é: " + autonomia);
-//        System.out.println("Autonomia do carro é: " + van.obterAutonomia());
+        double autonomia = van.obterAutonomia();
+        System.out.println("Autonomia do carro é: " + autonomia);
+        System.out.println("Autonomia do carro é: " + van.obterAutonomia());
 
 
         Carro fusca = new Carro();
@@ -29,6 +29,12 @@ public class TesteCarro {
         System.out.println(fusca.marca);
         System.out.println(fusca.modelo);
         fusca.exibirAutonomia();
+
+        double qtdCombustivel10 = van.calcularCombustivel(10);
+        double qtdCombustivel15 = van.calcularCombustivel(15);
+
+        System.out.println("qtdCombustivel10 = " + qtdCombustivel10);
+        System.out.println("qtdCombustivel15 = " + qtdCombustivel15);
 
 
 
