@@ -9,26 +9,26 @@ public class ContaCorrente {
     void sacar (double valor){
         if (especial &&  saldo > valor){
             saldo = saldo - valor;
-            System.out.println("\nValor sacado = " + valor);
+            System.out.println("Valor sacado = " + valor);
         } else {
-            System.out.println("\nOperação negada! Saldo insuficiente ou Operação não permitida");
+            System.out.println("Operação negada! Saldo insuficiente ou Operação não permitida");
         }
     }
 
     void despositar (double valor){
         saldo = saldo + valor;
-        System.out.println("\nValor depositado = " + valor);
+        System.out.println("Valor depositado = " + valor);
     }
 
-    double obterSaldo (){
+    double consultarSaldo (){
         return saldo;
     }
 
     void exibirUsoChequeEspecial () {
         if (especial) {
-            System.out.println("\nCheque Especial ativo");
+            System.out.println("Cheque Especial ativo");
         } else {
-            System.out.println("\nCheque Especial inativo");
+            System.out.println("Cheque Especial inativo");
         }
     }
 
