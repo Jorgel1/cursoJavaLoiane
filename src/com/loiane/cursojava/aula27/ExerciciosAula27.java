@@ -42,6 +42,55 @@ public class ExerciciosAula27 {
         System.out.println("Saldo: " + conta1.consultarSaldo());
         conta1.exibirUsoChequeEspecial();
 
+        //versao professora
+        System.out.println("Conta corrente versão da professora");
+        ContaCorrenteProfessora contaCorrenteProfessora = new ContaCorrenteProfessora();
+        contaCorrenteProfessora.numero = "123456";
+        contaCorrenteProfessora.agencia = "1234";
+        contaCorrenteProfessora.especial = true;
+        contaCorrenteProfessora.limiteEspecial = 500;
+        contaCorrenteProfessora.valorEspecialUsado = 0;
+        contaCorrenteProfessora.saldo = -10;
+
+        System.out.println("Saldo da conta " + contaCorrenteProfessora.numero + " = " + contaCorrenteProfessora.saldo);
+
+        boolean saqueEfetuado = contaCorrenteProfessora.realizarSaque(10);
+
+        if (saqueEfetuado) {            
+            System.out.println("Saque efetuado com sucesso");
+            contaCorrenteProfessora.consultarSaldo();
+        } else {
+            System.out.println("Não foi possível realizar saque. Saldo insuficiente");
+        }
+
+        saqueEfetuado = contaCorrenteProfessora.realizarSaque(500);
+        System.out.println("Tentativa de saque de 500 reais");
+        if (saqueEfetuado) {            
+            System.out.println("Saque efetuado com sucesso");
+            contaCorrenteProfessora.consultarSaldo();
+        } else {
+            System.out.println("Não foi possível realizar saque. Saldo insuficiente");
+        }
+
+        System.out.println("Deposito de 500 reais");
+        contaCorrenteProfessora.depositar(500);
+        contaCorrenteProfessora.consultarSaldo();
+
+        if (contaCorrenteProfessora.verificarUsoChequeEspecial()) {
+            System.out.println("Está usando cheque especial");
+        } else {
+            System.out.println("Não está usando cheque espcial");
+        }
+
+        contaCorrenteProfessora.realizarSaque(600);
+        contaCorrenteProfessora.consultarSaldo();
+
+        if (contaCorrenteProfessora.verificarUsoChequeEspecial()) {
+            System.out.println("Está usando cheque especial");
+        } else {
+            System.out.println("Não está usando cheque espcial");
+        }
+
         // 3. Escreva uma class para representar um Aluno. Adicione atributos
         // relacionados às caracteristicas de um Aluno, como nome, matricula, curso
         // que está matriculado, nome de 3 disciplinas que está cursando e as notas
@@ -96,5 +145,5 @@ public class ExerciciosAula27 {
 
     }
 
-    //terminei de fazer os 4 exercicios.
+    //correcao do exerc 03 video 53/98
 }

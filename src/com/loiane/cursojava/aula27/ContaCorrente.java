@@ -7,7 +7,7 @@ public class ContaCorrente {
     double limite;
 
     void sacar (double valor){
-        if (especial &&  saldo > valor){
+        if (especial &&  saldo >= valor){
             saldo = saldo - valor;
             System.out.println("Valor sacado = " + valor);
         } else {
