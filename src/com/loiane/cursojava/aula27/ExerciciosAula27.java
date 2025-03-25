@@ -1,6 +1,6 @@
 package com.loiane.cursojava.aula27;
 
-import com.loiane.cursojava.aula24.ContatoProfessora;
+import java.util.Scanner;
 
 public class ExerciciosAula27 {
     public static void main(String[] args) {
@@ -134,6 +134,42 @@ public class ExerciciosAula27 {
         System.out.println("Nome do aluno: " + aluno2.nome);
         System.out.println("Matrícula do aluno: " + aluno2.matricula);
         aluno2.verificarAprovacao();
+
+        //versao professora
+        Scanner scan = new Scanner(System.in);
+        AlunoProfessora aluno = new AlunoProfessora();
+
+        System.out.println("Entre com o nome do aluno");
+        aluno.nome = scan.next();
+
+        System.out.println("Entre com o nome do curso");
+        aluno.cursoMatriculado = scan.next();
+
+        System.out.println("Entre com a matricula");
+        aluno.matricula = scan.next();
+
+        //aluno.disciplinas = new String[3];
+        for (int i = 0; i < aluno.nomeDisciplinas.length; i++){
+            System.out.println("Entre com o nome da disciplina " + (1 + i));
+            aluno.nomeDisciplinas[i] = scan.next();
+        }
+
+        for (int i = 0; i < aluno.notasDisciplinas.length; i++){
+            System.out.println("Obtendo notas da disciplina " + aluno.nomeDisciplinas[i]);
+            for(int j = 0; j<aluno.notasDisciplinas[i].length; j++) {
+                System.out.println("Entre com a nota " + (j+1));
+                aluno.notasDisciplinas[i][j] = scan.nextDouble();
+            }
+        }
+        aluno.mostarInfo();
+
+        for (int i = 0; i < aluno.nomeDisciplinas.length; i++) {
+            if (aluno.verificarAprovado(i)) {
+                System.out.println("Disciplina " + aluno.nomeDisciplinas[i] + " - foi aprovado");
+            } else {
+                System.out.println("Disciplina " + aluno.nomeDisciplinas[i] + " - reprovado");
+            }
+        }
 
         // 4. Reescreva o exercício 6 da aula 20 (Jogo da Velha). Desenvolva uma classe
         // para representar o Jogo da Velha. Desenvolva uma classe para testar o
