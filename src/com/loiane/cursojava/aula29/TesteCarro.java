@@ -19,6 +19,7 @@ public class TesteCarro {
         System.out.println(van2.consumoCombustivel);
 
         Carro2 carro = new Carro2();
+        
 
         // Essa aula foi sobre construtores
     }
