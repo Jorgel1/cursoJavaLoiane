@@ -44,6 +44,9 @@ public class Aluno {
         return notasDisciplinas;
     }
 
+    public void setNotasDisciplinas(double[][] notasDisciplinas) {
+        this.notasDisciplinas = notasDisciplinas;
+    }
 
     void mostarInfo() {
         System.out.println("Nome " + nome);

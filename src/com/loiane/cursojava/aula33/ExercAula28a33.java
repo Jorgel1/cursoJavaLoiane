@@ -56,9 +56,41 @@ métodos	getters	e  settrs  e construtores. Os métodos que se
 //            aluno ao usuário e ao final informa o nome das disciplinas, mostra as
 //        notas e mostra se o aluno foi aprovado ou não.
 
+        Aluno aluno = new Aluno();
+        aluno.setNome("Joel");
+        aluno.setMatricula("100");
+        aluno.setCursoMatriculado("Ciencia da Computação");
+
+        String[] disciplinas = {"Calculo", "Algoritmos", "Estrutura"};
+        aluno.setNomeDisciplinas(disciplinas);
+
+        double[][] notas = {
+                {7.0, 8.0, 10.0, 6.0},
+                {5.0, 9.0, 8.0, 4.0},
+                {7.0, 10.0, 9.0, 8.0}
+        };
+
+        aluno.setNotasDisciplinas(notas);
+
+        aluno.mostarInfo();
+
+        for (int i = 0; i < disciplinas.length; i++) {
+            if (aluno.verificarAprovado(i)) {
+                System.out.println("Disciplina " + disciplinas[i] + " - foi aprovado");
+            } else {
+                System.out.println("Disciplina " + disciplinas[i] + " - reprovado");
+            }
+        }
+
 
         // --------------------------------------------------------------------------
 
-        // Fazendo exercicio 3  da aula 60/98
+//        4. Reescreva o exercício 6 da aula 20 (Jogo da Velha). Desenvolva uma classe
+//        para representar o Jogo da Velha. Desenvolva uma classe para testar o
+//        Jogo.
+
+        // --------------------------------------------------------------------------
+
+        // Fazendo exercicio 4  da aula 60/98
     }
 }
