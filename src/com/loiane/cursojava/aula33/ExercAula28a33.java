@@ -1,5 +1,10 @@
 package com.loiane.cursojava.aula33;
 
+import com.loiane.cursojava.aula27.JodoDaVelha;
+import com.loiane.cursojava.aula27.JogoDaVelhaProfessora;
+
+import java.util.Scanner;
+
 public class ExercAula28a33 {
     public static void main(String[] args) {
         /*
@@ -9,12 +14,18 @@ Reescreva	os	seguintes	exercícios,	criando	 os	atributos	do	tipo	privado,
 métodos	getters	e  settrs  e construtores. Os métodos que se
    */
 
-        // 1. Escreva uma classe para representar  uma lâmpada. Desenvolva métodos para ligar, desligar
-        // a lampada.
+//         1. Escreva uma classe para representar  uma lâmpada. Desenvolva métodos para ligar, desligar
+//         a lampada.
 
-//        Lampada lampada = new Lampada();
-//
-//        lampada.ligarLampada(true);
+        Lampada lampada = new Lampada("Led", 127, 5, true);
+
+        lampada.descricao();
+        lampada.ligarLampada();
+        lampada.mostrarEstado();
+        lampada.desligarLampada();
+        lampada.mostrarEstado();
+        lampada.descricao();
+
 
         // ---------------------------------------------------------------------------------
 
@@ -56,31 +67,31 @@ métodos	getters	e  settrs  e construtores. Os métodos que se
 //            aluno ao usuário e ao final informa o nome das disciplinas, mostra as
 //        notas e mostra se o aluno foi aprovado ou não.
 
-        Aluno aluno = new Aluno();
-        aluno.setNome("Joel");
-        aluno.setMatricula("100");
-        aluno.setCursoMatriculado("Ciencia da Computação");
-
-        String[] disciplinas = {"Calculo", "Algoritmos", "Estrutura"};
-        aluno.setNomeDisciplinas(disciplinas);
-
-        double[][] notas = {
-                {7.0, 8.0, 10.0, 6.0},
-                {5.0, 9.0, 8.0, 4.0},
-                {7.0, 10.0, 9.0, 8.0}
-        };
-
-        aluno.setNotasDisciplinas(notas);
-
-        aluno.mostarInfo();
-
-        for (int i = 0; i < disciplinas.length; i++) {
-            if (aluno.verificarAprovado(i)) {
-                System.out.println("Disciplina " + disciplinas[i] + " - foi aprovado");
-            } else {
-                System.out.println("Disciplina " + disciplinas[i] + " - reprovado");
-            }
-        }
+//        Aluno aluno = new Aluno();
+//        aluno.setNome("Joel");
+//        aluno.setMatricula("100");
+//        aluno.setCursoMatriculado("Ciencia da Computação");
+//
+//        String[] disciplinas = {"Calculo", "Algoritmos", "Estrutura"};
+//        aluno.setNomeDisciplinas(disciplinas);
+//
+//        double[][] notas = {
+//                {7.0, 8.0, 10.0, 6.0},
+//                {5.0, 9.0, 8.0, 4.0},
+//                {7.0, 10.0, 9.0, 8.0}
+//        };
+//
+//        aluno.setNotasDisciplinas(notas);
+//
+//        aluno.mostarInfo();
+//
+//        for (int i = 0; i < disciplinas.length; i++) {
+//            if (aluno.verificarAprovado(i)) {
+//                System.out.println("Disciplina " + disciplinas[i] + " - foi aprovado");
+//            } else {
+//                System.out.println("Disciplina " + disciplinas[i] + " - reprovado");
+//            }
+//        }
 
 
         // --------------------------------------------------------------------------
@@ -91,6 +102,67 @@ métodos	getters	e  settrs  e construtores. Os métodos que se
 
         // --------------------------------------------------------------------------
 
-        // Fazendo exercicio 4  da aula 60/98
+        Scanner scan = new Scanner(System.in);
+
+        JogoVelha jogoDaVelha = new JogoVelha();
+
+        System.out.println("Jogador 1 = X");
+        System.out.println("Jogador 2 = O");
+
+        boolean ganhou = false;
+        char sinal;
+        int linha = 0, coluna = 0;
+
+        while (!ganhou) {
+
+            if (jogoDaVelha.vezJogador1()) {
+
+                System.out.println("Vez do jogador 1. Escolha linha e coluna (1-3).");
+                sinal = 'X';
+            } else {
+
+                System.out.println("Vez do jogador 2. Escolha linha e coluna (1-3).");
+                sinal = 'O';
+            }
+
+            linha = valor("Linha", scan);
+            coluna = valor("Coluna", scan);
+
+            if (!jogoDaVelha.validarJogada(linha, coluna, sinal)) {
+                System.out.println("Posição já usada, tente novamente");
+            }
+
+            jogoDaVelha.imprimirTabuleiro();
+
+            if (jogoDaVelha.verificarGanhador('X')) {
+                ganhou = true;
+                System.out.println("Parabéns, jogador 1 ganhou!");
+            } else if (jogoDaVelha.verificarGanhador('O')) {
+                ganhou = true;
+                System.out.println("Parabéns, jogador 2 ganhou!");
+            } else if (jogoDaVelha.jogada > 9) {
+                ganhou = true;
+                System.out.println("Ninguém ganhou essa partida.");
+            }
+        }
     }
+
+    static int valor(String tipoValor, Scanner scan) {
+        int valor = 0;
+        boolean valorValida = false;
+        while (!valorValida) {
+            System.out.println("Entre com a " + tipoValor + " (1, 2 ou 3)");
+            valor = scan.nextInt();
+            if (valor >= 1 && valor <= 3) {
+                valorValida = true;
+            } else {
+                System.out.println("Entrada inválida, tente novamente");
+            }
+        }
+        valor--;
+        return valor;
+    }
+
+    // Corrigido exercicio 1  da aula 61/98
 }
+
