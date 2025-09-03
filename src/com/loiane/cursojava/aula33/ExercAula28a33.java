@@ -94,6 +94,48 @@ métodos	getters	e  settrs  e construtores. Os métodos que se
 //        }
 
 
+
+// Versão da professora:
+
+Scanner scan = new Scanner(System.in);
+        
+        Aluno aluno = new Aluno();
+        
+        System.out.println("Entre com o nome do aluno");
+        aluno.setNome(scan.next());
+        
+        System.out.println("Entre com o nome do curso");
+        aluno.setNomeCurso(scan.next());
+        
+        System.out.println("Entre com a matricula");
+        aluno.setMatricula(scan.next());
+        
+        //aluno.nomeDisciplinas = new String[3];
+        for (int i=0; i<aluno.getNomeDisciplinas().length; i++){
+            System.out.println("Entre com o nome da disciplina " + i);
+            aluno.setNomeDisciplinaPos(i, scan.next());
+        }
+        
+        for (int i=0; i<aluno.getNotasDisciplinas().length; i++){
+            System.out.println("Obtendo notas da disciplina " + aluno.getNomeDisciplinas()[i]);
+            for (int j=0; j<aluno.getNotasDisciplinas()[i].length; j++){
+                System.out.println("Entre com a nota " + (j+1));
+                aluno.setNomePosIJ(i, j, scan.nextDouble());
+            }
+        }
+        
+        aluno.mostrarInfo();
+        
+        for (int i=0; i<aluno.getNomeDisciplinas().length; i++){
+            if (aluno.verificarAprovado(i)){
+                System.out.println("Disciplina " + aluno.getNomeDisciplinas()[i] + " - foi aprovado");
+            } else {
+                System.out.println("Disciplina " + aluno.getNomeDisciplinas()[i] + " - reprovado");
+            }
+        }
+    }
+
+
         // --------------------------------------------------------------------------
 
 //        4. Reescreva o exercício 6 da aula 20 (Jogo da Velha). Desenvolva uma classe
@@ -102,67 +144,67 @@ métodos	getters	e  settrs  e construtores. Os métodos que se
 
         // --------------------------------------------------------------------------
 
-        Scanner scan = new Scanner(System.in);
+        // Scanner scan = new Scanner(System.in);
 
-        JogoVelha jogoDaVelha = new JogoVelha();
+        // JogoVelha jogoDaVelha = new JogoVelha();
 
-        System.out.println("Jogador 1 = X");
-        System.out.println("Jogador 2 = O");
+    //     System.out.println("Jogador 1 = X");
+    //     System.out.println("Jogador 2 = O");
 
-        boolean ganhou = false;
-        char sinal;
-        int linha = 0, coluna = 0;
+    //     boolean ganhou = false;
+    //     char sinal;
+    //     int linha = 0, coluna = 0;
 
-        while (!ganhou) {
+    //     while (!ganhou) {
 
-            if (jogoDaVelha.vezJogador1()) {
+    //         if (jogoDaVelha.vezJogador1()) {
 
-                System.out.println("Vez do jogador 1. Escolha linha e coluna (1-3).");
-                sinal = 'X';
-            } else {
+    //             System.out.println("Vez do jogador 1. Escolha linha e coluna (1-3).");
+    //             sinal = 'X';
+    //         } else {
 
-                System.out.println("Vez do jogador 2. Escolha linha e coluna (1-3).");
-                sinal = 'O';
-            }
+    //             System.out.println("Vez do jogador 2. Escolha linha e coluna (1-3).");
+    //             sinal = 'O';
+    //         }
 
-            linha = valor("Linha", scan);
-            coluna = valor("Coluna", scan);
+    //         linha = valor("Linha", scan);
+    //         coluna = valor("Coluna", scan);
 
-            if (!jogoDaVelha.validarJogada(linha, coluna, sinal)) {
-                System.out.println("Posição já usada, tente novamente");
-            }
+    //         if (!jogoDaVelha.validarJogada(linha, coluna, sinal)) {
+    //             System.out.println("Posição já usada, tente novamente");
+    //         }
 
-            jogoDaVelha.imprimirTabuleiro();
+    //         jogoDaVelha.imprimirTabuleiro();
 
-            if (jogoDaVelha.verificarGanhador('X')) {
-                ganhou = true;
-                System.out.println("Parabéns, jogador 1 ganhou!");
-            } else if (jogoDaVelha.verificarGanhador('O')) {
-                ganhou = true;
-                System.out.println("Parabéns, jogador 2 ganhou!");
-            } else if (jogoDaVelha.jogada > 9) {
-                ganhou = true;
-                System.out.println("Ninguém ganhou essa partida.");
-            }
-        }
-    }
+    //         if (jogoDaVelha.verificarGanhador('X')) {
+    //             ganhou = true;
+    //             System.out.println("Parabéns, jogador 1 ganhou!");
+    //         } else if (jogoDaVelha.verificarGanhador('O')) {
+    //             ganhou = true;
+    //             System.out.println("Parabéns, jogador 2 ganhou!");
+    //         } else if (jogoDaVelha.jogada > 9) {
+    //             ganhou = true;
+    //             System.out.println("Ninguém ganhou essa partida.");
+    //         }
+    //     }
+    // }
 
-    static int valor(String tipoValor, Scanner scan) {
-        int valor = 0;
-        boolean valorValida = false;
-        while (!valorValida) {
-            System.out.println("Entre com a " + tipoValor + " (1, 2 ou 3)");
-            valor = scan.nextInt();
-            if (valor >= 1 && valor <= 3) {
-                valorValida = true;
-            } else {
-                System.out.println("Entrada inválida, tente novamente");
-            }
-        }
-        valor--;
-        return valor;
-    }
+    // static int valor(String tipoValor, Scanner scan) {
+    //     int valor = 0;
+    //     boolean valorValida = false;
+    //     while (!valorValida) {
+    //         System.out.println("Entre com a " + tipoValor + " (1, 2 ou 3)");
+    //         valor = scan.nextInt();
+    //         if (valor >= 1 && valor <= 3) {
+    //             valorValida = true;
+    //         } else {
+    //             System.out.println("Entrada inválida, tente novamente");
+    //         }
+    //     }
+    //     valor--;
+    //     return valor;
+    // }
 
-    // Corrigido exercicio 1  da aula 61/98
+    // Corrigido exercicio 3  da aula 63/98
 }
 

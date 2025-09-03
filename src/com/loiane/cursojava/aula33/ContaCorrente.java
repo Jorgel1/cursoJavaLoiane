@@ -6,6 +6,8 @@ public class ContaCorrente {
     private String agencia;
     private boolean especial;
     private double limiteEspecial;
+    private double valorEspecialUsado;
+    private double saldo;
 
     public double getLimiteEspecial() {
         return limiteEspecial;
@@ -15,8 +17,6 @@ public class ContaCorrente {
         this.limiteEspecial = limiteEspecial;
     }
 
-    private double valorEspecialUsado;
-    private double saldo;
 
     public void setEspecial(boolean especial) {
         this.especial = especial;

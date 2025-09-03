@@ -2,7 +2,7 @@ package com.loiane.cursojava.aula33;
 
 public class Aluno {
 
-   private String nome;
+    private String nome;
     private String matricula;
     private String cursoMatriculado;
     private String[] nomeDisciplinas = new String[3];
@@ -48,7 +48,7 @@ public class Aluno {
         this.notasDisciplinas = notasDisciplinas;
     }
 
-    void mostarInfo() {
+    public void mostarInfo() {
         System.out.println("Nome " + nome);
         System.out.println("Matrícula: " + matricula);
         System.out.println("Nome do curso: " + cursoMatriculado);
@@ -62,7 +62,7 @@ public class Aluno {
         }
     }
 
-    boolean verificarAprovado(int indice) {
+    public boolean verificarAprovado(int indice) {
 
         if (obterMedia(indice) >= 7) {
             return true;
@@ -71,7 +71,7 @@ public class Aluno {
 
     }
 
-    double obterMedia(int indice) {
+    private double obterMedia(int indice) {
         double soma = 0;
         for (int i = 0; i < notasDisciplinas[indice].length; i++) {
             soma += notasDisciplinas[indice][i];
