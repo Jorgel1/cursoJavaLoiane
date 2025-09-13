@@ -8,12 +8,12 @@ public class AlunoProfessora {
     private String[] nomeDisciplinas;
     private double[][] notasDisciplinas;
 
-    public Aluno() {
+    public AlunoProfessora() {
         nomeDisciplinas = new String[3];
         notasDisciplinas = new double[3][4];
     }
 
-    public Aluno(String nome, String matricula, String nomeCurso) {
+    public AlunoProfessora(String nome, String matricula, String nomeCurso) {
         this.nome = nome;
         this.matricula = matricula;
         this.nomeCurso = nomeCurso;

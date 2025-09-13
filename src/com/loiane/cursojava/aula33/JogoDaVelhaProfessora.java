@@ -5,7 +5,7 @@ public class JogoDaVelhaProfessora {
      private char[][] jogoVelha;
     private int jogada;
 
-    public JogoDaVelha() {
+    public JogoDaVelhaProfessora() {
         jogoVelha = new char[3][3];
         jogada = 1;
     }
