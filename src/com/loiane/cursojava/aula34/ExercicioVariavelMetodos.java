@@ -27,5 +27,7 @@ public class ExercicioVariavelMetodos {
         //  (dois  números),  elevar  à  potência  n.   Desenvolva  um  
         //  programa  para  testar  essa  classe. 
         
+
+        //Feito o exerc 1 aula 34 video 65/98
     }
 }
