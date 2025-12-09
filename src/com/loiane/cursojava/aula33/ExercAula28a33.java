@@ -1,7 +1,7 @@
 package com.loiane.cursojava.aula33;
 
 import com.loiane.cursojava.aula27.JodoDaVelha;
-import com.loiane.cursojava.aula27.JogoDaVelhaProfessora;
+import com.loiane.cursojava.aula33.JogoDaVelhaProfessora;
 
 import java.util.Scanner;
 

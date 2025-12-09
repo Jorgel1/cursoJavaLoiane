@@ -2,7 +2,7 @@
 package com.loiane.cursojava.aula33;
 
 public class JogoDaVelhaProfessora {
-     private char[][] jogoVelha;
+    private char[][] jogoVelha;
     private int jogada;
 
     public JogoDaVelhaProfessora() {

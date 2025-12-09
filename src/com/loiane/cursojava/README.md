@@ -7,5 +7,7 @@
 
 **git push**
 
+**git pull**
+
 
 ---
