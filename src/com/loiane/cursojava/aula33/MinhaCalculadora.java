@@ -23,4 +23,17 @@ public class MinhaCalculadora {
         return total;
     }
 
+     public int subtrair(int num1, int num2){
+        return num1 - num2;
+    }
+
+     public int dividir(int num1, int num2){
+        return num1 / num2;
+    }
+
+     public int elevarPotencia(int base, int expoente){
+        return Math.pow(base, expoente);
+    }
+
+
 }
