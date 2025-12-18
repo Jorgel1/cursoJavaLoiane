@@ -1,6 +1,10 @@
 
 package com.loiane.cursojava.aula34;
 
+import com.loiane.cursojava.aula33.MinhaCalculadora;
+
+import java.util.Scanner;
+
 public class TesteCalculadora {
 
     static int resultSoma;
@@ -31,28 +35,35 @@ public class TesteCalculadora {
 
         System.out.println("-- Calculadora ---");
         System.out.println("-Escolha uma opção: \n 1 - Somar 2 números inteiros\n 2 - Somar 2 números decimais\n 3 - Somar 3 números inteiros");
-        System.out.println("4 - Subtrair 2 números inteiros\n 5 - Multiplicar 2 números inteiros\n 6 - Dividir 2 números inteiros\n 7 - Expoente\n Qualquer caracteres para sair.")
+        System.out.println("4 - Subtrair 2 números inteiros\n 5 - Multiplicar 2 números inteiros\n 6 - Dividir 2 números inteiros\n 7 - Expoente\n Qualquer caracteres para sair.");
         Scanner scan = new Scanner(System.in);
-        opcao = scan.next; 
-        if('2') {
+        opcao = scan.next().charAt(0);
+
+        if(opcao == '1') {
             System.out.println("  Digite o primeiro número: ");
-            numDec1 = scan.double; 
+            numDec1 = scan.nextDouble();
             System.out.println("  Digite o segundo número: ");
-            numDec2 = scan.double; 
+            numDec2 = scan.nextDouble();
+
+        if(opcao == '2') {
+            System.out.println("  Digite o primeiro número: ");
+            numDec1 = scan.nextDouble();
+            System.out.println("  Digite o segundo número: ");
+            numDec2 = scan.nextDouble();
         }
-          if('3') {
+          if(opcao == '3') {
             System.out.println("  Digite o primeiro número: ");
-            num1 = scan.int; 
+            num1 = scan.nextInt();
             System.out.println("  Digite o segundo número: ");
-            num2 = scan.int; 
+            num2 = scan.nextInt();
             System.out.println("  Digite o segundo número: ");
-            num3 = scan.int; 
+            num3 = scan.nextInt();
         }
        
         System.out.println("  Digite o primeiro número: ");
-        numDec1 = scan.int; 
+        numDec1 = scan.nextInt();
         System.out.println("  Digite o segundo número: ");
-        numDec2 = scan.int; 
+        numDec2 = scan.nextInt();
 
            switch (opcao) {
             case '1': System.out.println("Resultado: "calc.soma(num1, num2)); break;
@@ -60,8 +71,8 @@ public class TesteCalculadora {
             case '3': System.out.println("Resultado: "calc.soma(num1, num2, num3)); break;
             case '4': System.out.println("Resultado: "calc.Subtrair(num1, num2)); break;
             case '5': System.out.println("Resultado: "calc.Multiplicar(num1, num2)); break;
-            case '6': System.out.println("Resultado: "calc.Dividir(num1, num2)); break; 
-            case '7': System.out.println("Resultado: "calc.elevarPotencia(num1, num2)); break;          
+            case '6': System.out.println("Resultado: "calc.Dividir(num1, num2)); break;
+            case '7': System.out.println("Resultado: "calc.elevarPotencia(num1, num2)); break;
             default:System.out.println("Saindo ...");
         }
 
