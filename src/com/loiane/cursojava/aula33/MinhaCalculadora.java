@@ -32,8 +32,11 @@ public class MinhaCalculadora {
     }
 
      public int elevarPotencia(int base, int expoente){
-        return Math.pow(base, expoente);
+        return (int) Math.pow(base, expoente);
     }
 
 
+    public int multiplicar(int num1, int num2) {
+        return num1 * num2;
+    }
 }
