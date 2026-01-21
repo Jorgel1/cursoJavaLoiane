@@ -5,6 +5,7 @@ import com.loiane.cursojava.aula33.MinhaCalculadora;
 
 import java.util.Scanner;
 
+
 public class TesteCalculadora {
 
    static int resultSoma;
@@ -139,22 +140,56 @@ public class TesteCalculadora {
 
          */
 
-        double pes = ConversaoDeUnidadesDeArea.metro2ParaPes2();
-        System.out.println("Resultado: " + pes + " Pés ao quadrado. ");
-
-        double centimetros = ConversaoDeUnidadesDeArea.pes2ParaCent2();
-        System.out.println("Resultado: " + centimetros + " Centímetros ao quadrado. ");
-
-        double acres = ConversaoDeUnidadesDeArea.milha2ParaAcres2();
-        System.out.println("Resultado: " + acres + " Acres ao quadrado. ");
-
-        pes = ConversaoDeUnidadesDeArea.acre2ParaPes2();
-        System.out.println("Resultado: " + pes + " Pés ao quadrado. ");
+//        double pes = ConversaoDeUnidadesDeArea.metro2ParaPes2();
+//        System.out.println("Resultado: " + pes + " Pés ao quadrado. ");
+//
+//        double centimetros = ConversaoDeUnidadesDeArea.pes2ParaCent2();
+//        System.out.println("Resultado: " + centimetros + " Centímetros ao quadrado. ");
+//
+//        double acres = ConversaoDeUnidadesDeArea.milha2ParaAcres2();
+//        System.out.println("Resultado: " + acres + " Acres ao quadrado. ");
+//
+//        pes = ConversaoDeUnidadesDeArea.acre2ParaPes2();
+//        System.out.println("Resultado: " + pes + " Pés ao quadrado. ");
 
         System.out.println("-----------------------------");
 
+        /*  -------------------------------------------------------------------------- */
 
-        // aula 65/98 exerc 4 resolvido
+        //        Escreva a classe ConversaoDeUnidadesDeVolume com métodos estáticos
+        //        para conversão das unidades de volume segundo a lista abaixo.
+        //• 1 litro = 1000 centímetros cúbicos
+        //• 1 metro cúbico = 1000 litros
+        //• 1 metro cúbico = 35.32 pés cúbicos
+        //• 1 galão americano = 231 polegadas cúbicas
+        //• 1 galão americano = 3.785 litros
+
+        //converte litros para centímetros cúbicos
+        double cent3 = ConversaoDeUnidadesDeVolume.ltParaCent3();
+        System.out.println("Resultado: " + cent3 + " centímetros cúbicos. ");
+
+        //converte metro cúbico para litros
+        double lt = ConversaoDeUnidadesDeVolume.m3ParaLt();
+        System.out.println("Resultado: " + lt + " litros. ");
+
+        //converte metro cúbico  para pes cúbicos
+        double pes3 = ConversaoDeUnidadesDeVolume.m3ParaPes3();
+        System.out.println("Resultado: " + pes3 + " pés cúbicos. ");
+
+        //converte galão americano  para polegadas cúbicos
+        double pol3 = ConversaoDeUnidadesDeVolume.galaoAmerParapol3();
+        System.out.println("Resultado: " + pol3 + " polegadas cúbicas. ");
+
+        //converte galão americano  para litros
+        double litro = ConversaoDeUnidadesDeVolume.galaoAmerParaLl();
+        System.out.println("Resultado: " + litro + " litros. ");
+
+        System.out.println("-----------------------------");
+
+        /*  -------------------------------------------------------------------------- */
+
+
+        // aula 65/98 exerc 5 resolvido
 
 
 
